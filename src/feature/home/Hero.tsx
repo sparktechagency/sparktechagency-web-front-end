@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="space-y-4">
           <h1 className="text-5xl lg:text-7xl font-bold leading-tight max-w-[950px] mx-auto">
             <span>Where Innovation Sparks </span>
-            <span className="text-5xl md:text-6xl font-bold bg-linear-to-r from-lime-400 via-lime-500 to-green-500 bg-clip-text text-transparent">
+            <span className="text-5xl md:text-6xl font-bold text-primary ">
               Digital Excellence
             </span>
           </h1>

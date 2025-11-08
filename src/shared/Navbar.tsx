@@ -1,11 +1,17 @@
 "use client";
+import React, { useState, useMemo, useEffect, useRef } from "react";
+import { DownOutlined, MenuOutlined } from "@ant-design/icons";
+import Image from "next/image";
+import Link from "next/link";
+import { Button, Dropdown, Drawer, ConfigProvider } from "antd";
 
-import { useEffect, useRef, useState } from "react";
-import { Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
+import navItems from "@/constants/navItem";
 
-export default function Navbar() {
+export default function Navbar({ t }: any) {
+  const pathname = usePathname();
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScrollTop = useRef(0);
 
@@ -49,51 +55,111 @@ export default function Navbar() {
 
   return (
     <nav
-      className={` navbar-container 
+      className={`  z-50 w-full  navbar-container 
         ${
           isScrolled
-            ? "fixed top-10  z-50 w-full  mt-0"
-            : "bg-transparent lg:bg-transparent md:px-8 2xl:px-0  lg:backdrop-blur-none mt-6  lg:mt-10 absolute top-[700px] w-full"
+            ? "fixed top-10"
+            : "bg-transparent lg:bg-transparent md:px-8 2xl:px-0  lg:backdrop-blur-none absolute top-[700px]  lg:mt-10 "
         }
-
+    
       `}
     >
-      <div className="w-full max-w-2xl mx-auto px-6 py-4 bg-slate-900 rounded-full shadow-2xl">
-        <div className="flex items-center justify-between">
+      <div
+        className={`w-fit mx-auto px-4 lg:px-4  py-4 transition-colors duration-300 bg-[#080808] rounded-full`}
+      >
+        <div className="flex items-center justify-center">
           {/* Logo */}
-          <div className="flex items-center gap-2 font-bold text-white">
-            <div className="w-8 h-8 rounded-full bg-linear-to-br from-lime-400 to-green-500 flex items-center justify-center">
-              <span className="text-slate-900 text-sm">⚡</span>
-            </div>
-            <span className="hidden sm:inline">Sparktech</span>
-          </div>
+          {/* <Link href={"/"} className="shrink-0 -mt-2">
+            <Image
+              src="/Logo.svg"
+              alt="VIAJIA Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+            />
+          </Link> */}
 
-          {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
-            {[
-              "Home",
-              "Services",
-              "Life at Spark",
-              "Company",
-              "Career",
-              "Contact",
-            ].map((label) => (
-              <a
-                key={label}
-                href="#"
-                className="text-sm text-slate-300 hover:text-white transition duration-200"
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navItems?.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                className={`text-sm transition-all duration-300 ${
+                  item.href === pathname
+                    ? "relative font-semibold px-8 py-2 rounded-full text-white bg-[#00BCD1]/20 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+                    : "text-slate-300 hover:text-cyan-400"
+                }`}
+                style={{
+                  backdropFilter:
+                    item.href === pathname
+                      ? "blur(10px) saturate(120%)"
+                      : "none",
+                  WebkitBackdropFilter:
+                    item.href === pathname
+                      ? "blur(10px) saturate(120%)"
+                      : "none",
+                }}
               >
-                {label}
-              </a>
+                {item.labelKey}
+              </Link>
             ))}
           </div>
-
-          {/* Mobile */}
-          <button className="md:hidden text-white p-2">
-            <Menu size={24} />
-          </button>
         </div>
       </div>
+
+      {/* Drawer for Mobile */}
+      <ConfigProvider
+        theme={{
+          components: {
+            Drawer: {
+              colorBgElevated: "#171717",
+              colorText: "rgba(255,255,255,0.88)",
+            },
+          },
+        }}
+      >
+        <Drawer
+          title={
+            <div className="flex justify-between items-center">
+              <span className="font-semibold text-lg">Menu</span>
+              {/* <CloseOutlined onClick={() => setDrawerOpen(false)} /> */}
+            </div>
+          }
+          placement="right"
+          width={280}
+          onClose={() => setDrawerOpen(false)}
+          open={drawerOpen}
+          styles={{
+            body: {
+              background: "#0B0C10",
+              color: "#fff",
+            },
+          }}
+        >
+          <div className="flex flex-col gap-6 mt-4">
+            {navItems?.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                className={`${
+                  item.href === pathname
+                    ? "relative font-semibold pl-4 -ml-4 py-2 rounded-lg text-white! bg-[#00BCD1]/20! backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+                    : "text-white! hover:text-cyan-400"
+                } text-base   transition-all`}
+                onClick={() => setDrawerOpen(false)}
+              >
+                {item.labelKey}
+              </Link>
+            ))}
+
+            {/* Download Button */}
+            <button className="bg-[#00BCD1] text-white px-6 py-2 rounded-full transition-colors text-sm w-full">
+              Download App
+            </button>
+          </div>
+        </Drawer>
+      </ConfigProvider>
     </nav>
   );
 }
