@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import AntProvider from "@/lib/provider/AntProvider";
+import AntProvider from "@/lib/context/AntProvider";
 import { Toaster } from "sonner";
 
 const poppins = Poppins({

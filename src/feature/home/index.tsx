@@ -1,5 +1,5 @@
+import Hero from "@/feature/home/Hero";
 import React from "react";
-import Hero from "./Hero";
 
 export default function Homepage() {
   return (

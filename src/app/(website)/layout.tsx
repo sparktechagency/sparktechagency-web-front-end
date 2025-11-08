@@ -1,4 +1,5 @@
-import Navbar from "@/components/shared/navbar/Navbar";
+import ChatBot from "@/components/shared/chatbot/Chatbot";
+import Navbar from "@/shared/Navbar";
 import React from "react";
 export default function layout({ children }: { children: React.ReactNode }) {
   return (
@@ -6,6 +7,8 @@ export default function layout({ children }: { children: React.ReactNode }) {
       <Navbar />
       <section>{children}</section>
       <footer></footer>
+      {/* Chatbot widget */}
+      <ChatBot />
     </main>
   );
 }

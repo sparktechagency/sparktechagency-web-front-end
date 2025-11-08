@@ -1,4 +1,7 @@
+import { members } from "@/constants/home-data";
+import { Avatar } from "antd";
 import { Star } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -15,7 +18,7 @@ export default function Hero() {
       <div className=" container mx-auto text-center space-y-8">
         {/* Main headline */}
         <div className="space-y-4">
-          <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 leading-tight max-w-[950px] mx-auto">
+          <h1 className="text-5xl lg:text-7xl font-bold leading-tight max-w-[950px] mx-auto">
             <span>Where Innovation Sparks </span>
             <span className="text-5xl md:text-6xl font-bold bg-linear-to-r from-lime-400 via-lime-500 to-green-500 bg-clip-text text-transparent">
               Digital Excellence
@@ -24,17 +27,47 @@ export default function Hero() {
         </div>
 
         {/* Social proof */}
-        <div className="flex items-center justify-center gap-4 py-4  backdrop-blur-3xl">
-          <div className="flex -space-x-3">
-            {[1, 2, 3, 4].map((i) => (
+        <div
+          className="
+        flex items-center justify-center gap-4 py-4 px-6 rounded-full
+        bg-white/10 backdrop-blur-2xl shadow-lg 
+        border border-white/30 w-fit mx-auto
+      "
+        >
+          {/* Avatars */}
+          <div className="flex -space-x-3 relative">
+            {members.map((m, i) => (
               <div
                 key={i}
-                className="w-10 h-10 rounded-full border-2 border-white bg-linear-to-br from-slate-300 to-slate-400 flex items-center justify-center text-xs font-semibold text-slate-700"
+                className="relative group cursor-pointer transition-transform duration-300 hover:-translate-y-3"
               >
-                {i}
+                {/* Avatar */}
+                <Image
+                  key={i}
+                  src={m?.img}
+                  height={80}
+                  width={80}
+                  alt={m?.name}
+                  className="border-2 border-white shadow-md hover:z-50 object-cover rounded-full h-10 w-10"
+                />
+
+                {/* Tooltip */}
+                <div
+                  className="
+                absolute left-1/2 -translate-x-1/2 
+                -top-10 opacity-0 group-hover:opacity-100 
+                bg-black text-white text-sm px-3 py-1 rounded-full
+                transition-all duration-300 pointer-events-none
+                whitespace-nowrap shadow-lg
+              "
+                >
+                  {m.name}
+                </div>
               </div>
             ))}
           </div>
+
+          {/* Stars + text */}
           <div>
             <div className="flex gap-1 mb-1">
               {[...Array(5)].map((_, i) => (
