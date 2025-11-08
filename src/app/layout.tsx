@@ -12,6 +12,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Spark Tech Agency",
   description: "A Betopia Company",
+  icons: {
+    icon: "/favicon.png",
+  }
 };
 
 export default function RootLayout({
