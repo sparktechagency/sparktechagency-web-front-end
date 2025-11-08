@@ -11,34 +11,34 @@ const NotFoundPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center transition-colors duration-300 bg-gray-50  py-8 lg:py-0">
+    <div className="min-h-screen flex items-center justify-center transition-colors duration-300 bg-gray-50 py-8 lg:py-0">
       <div className="container px-4 mx-auto">
-        <div className="max-w-5xl mx-auto relative overflow-hidden bg-white/80 border border-blue-200/30 backdrop-blur-md rounded-2xl shadow-xl transition-all duration-300">
+        <div className="max-w-5xl mx-auto relative overflow-hidden bg-white/80 border border-green-200/30 backdrop-blur-md rounded-2xl shadow-xl transition-all duration-300">
           {/* Decorative Elements */}
-          <div className="absolute -top-20 -right-20 w-64 h-64 bg-linear-to-br from-blue-600/20 to-teal-600/20 rounded-full blur-3xl -z-10"></div>
-          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-linear-to-br from-indigo-600/20 to-cyan-600/20 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-linear-to-br from-green-300/20 to-green-400/20 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-linear-to-br from-green-400/20 to-green-300/20 rounded-full blur-3xl -z-10"></div>
 
           {/* Circuit-like Lines */}
           <div className="absolute inset-0 overflow-hidden opacity-10">
-            <div className="absolute top-1/4 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500 to-transparent animate-pulse"></div>
+            <div className="absolute top-1/4 left-0 w-full h-px bg-linear-to-r from-transparent via-green-400 to-transparent animate-pulse"></div>
             <div
-              className="absolute top-2/4 left-0 w-full h-px bg-linear-to-r from-transparent via-indigo-500 to-transparent animate-pulse"
+              className="absolute top-2/4 left-0 w-full h-px bg-linear-to-r from-transparent via-green-500 to-transparent animate-pulse"
               style={{ animationDelay: "1s" }}
             ></div>
             <div
-              className="absolute top-3/4 left-0 w-full h-px bg-linear-to-r from-transparent via-cyan-500 to-transparent animate-pulse"
+              className="absolute top-3/4 left-0 w-full h-px bg-linear-to-r from-transparent via-green-600 to-transparent animate-pulse"
               style={{ animationDelay: "2s" }}
             ></div>
             <div
-              className="absolute left-1/4 top-0 h-full w-px bg-linear-to-b from-transparent via-blue-500 to-transparent animate-pulse"
+              className="absolute left-1/4 top-0 h-full w-px bg-linear-to-b from-transparent via-green-400 to-transparent animate-pulse"
               style={{ animationDelay: "0.5s" }}
             ></div>
             <div
-              className="absolute left-2/4 top-0 h-full w-px bg-linear-to-b from-transparent via-indigo-500 to-transparent animate-pulse"
+              className="absolute left-2/4 top-0 h-full w-px bg-linear-to-b from-transparent via-green-500 to-transparent animate-pulse"
               style={{ animationDelay: "1.5s" }}
             ></div>
             <div
-              className="absolute left-3/4 top-0 h-full w-px bg-linear-to-b from-transparent via-cyan-500 to-transparent animate-pulse"
+              className="absolute left-3/4 top-0 h-full w-px bg-linear-to-b from-transparent via-green-600 to-transparent animate-pulse"
               style={{ animationDelay: "2.5s" }}
             ></div>
           </div>
@@ -51,7 +51,7 @@ const NotFoundPage = () => {
                 <span>Error 404</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-teal-600">
+              <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-linear-to-r from-green-400 via-green-500 to-green-600">
                 Oops!
               </h1>
 
@@ -67,7 +67,7 @@ const NotFoundPage = () => {
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <button
                   onClick={handleGoBack}
-                  className="group relative flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 bg-white text-blue-600 border border-blue-200/50 hover:bg-gray-50 cursor-pointer"
+                  className="group relative flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 bg-white text-green-600 border border-green-200/50 hover:bg-gray-50 cursor-pointer"
                 >
                   <FiArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
                   Go Back
@@ -75,7 +75,7 @@ const NotFoundPage = () => {
 
                 <Link
                   href="/profile/home"
-                  className="group relative flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 bg-linear-to-r from-blue-600 to-teal-600 text-white hover:from-blue-700 hover:to-teal-700 cursor-pointer"
+                  className="group relative flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 bg-linear-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 cursor-pointer"
                 >
                   <FiHome className="mr-2 group-hover:scale-110 transition-transform duration-300" />
                   Return to Homepage
@@ -87,15 +87,15 @@ const NotFoundPage = () => {
             <div className="w-full md:w-1/2 flex justify-center">
               <div className="relative">
                 {/* Animated Illustration */}
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-100/50 border border-blue-200/30 flex items-center justify-center relative overflow-hidden">
+                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-100/50 border border-green-200/30 flex items-center justify-center relative overflow-hidden">
                   {/* Animated Circles */}
                   <div className="absolute inset-0">
                     <div
-                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border-4 border-dashed animate-spin-slow opacity-20 border-blue-500"
+                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border-4 border-dashed animate-spin-slow opacity-20 border-green-400"
                       style={{ animationDuration: "15s" }}
                     ></div>
                     <div
-                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 rounded-full border-4 border-dashed animate-spin-slow opacity-10 border-indigo-500"
+                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 rounded-full border-4 border-dashed animate-spin-slow opacity-10 border-green-500"
                       style={{
                         animationDuration: "30s",
                         animationDirection: "reverse",
@@ -119,15 +119,15 @@ const NotFoundPage = () => {
 
                 {/* Floating Elements */}
                 <div
-                  className="absolute -top-4 -right-4 w-12 h-12 rounded-lg transform rotate-12 animate-float bg-linear-to-br from-blue-600/30 to-teal-600/30 backdrop-blur-md border border-blue-500/20"
+                  className="absolute -top-4 -right-4 w-12 h-12 rounded-lg transform rotate-12 animate-float bg-linear-to-br from-green-400/30 to-green-500/30 backdrop-blur-md border border-green-400/20"
                   style={{ animationDelay: "0s" }}
                 ></div>
                 <div
-                  className="absolute -bottom-6 -left-6 w-16 h-16 rounded-lg transform -rotate-12 animate-float bg-linear-to-br from-indigo-600/30 to-cyan-600/30 backdrop-blur-md border border-indigo-500/20"
+                  className="absolute -bottom-6 -left-6 w-16 h-16 rounded-lg transform -rotate-12 animate-float bg-linear-to-br from-green-500/30 to-green-400/30 backdrop-blur-md border border-green-500/20"
                   style={{ animationDelay: "1s" }}
                 ></div>
                 <div
-                  className="absolute top-1/2 -right-8 w-10 h-10 rounded-full transform animate-float bg-linear-to-br from-teal-600/30 to-blue-600/30 backdrop-blur-md border border-teal-500/20"
+                  className="absolute top-1/2 -right-8 w-10 h-10 rounded-full transform animate-float bg-linear-to-br from-green-400/30 to-green-500/30 backdrop-blur-md border border-green-400/20"
                   style={{ animationDelay: "2s" }}
                 ></div>
               </div>
