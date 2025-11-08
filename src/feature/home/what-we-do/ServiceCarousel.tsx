@@ -17,7 +17,7 @@ export default function ServiceCarousel({
   setIsAutoPlay,
 }: ServiceCarouselProps) {
   return (
-    <div className="w-full space-y-4 flex flex-col justify-end text-end">
+    <div className="w-full space-y-8 flex flex-col justify-end text-end">
       {services.map((service, index) => {
         const isActive = index === activeIndex;
 
@@ -37,8 +37,8 @@ export default function ServiceCarousel({
             <h3
               className={` tracking-wide transition-all duration-300 ${
                 isActive
-                  ? "text-2xl lg:text-3xl text-[#606060] font-semibold"
-                  : "text-lg  text-[#A3A3A3]/70 hover:text-foreground/70"
+                  ? "text-2xl lg:text-3xl 2xl:text-4xl text-[#606060] font-semibold"
+                  : "text-lg lg:text-xl text-[#A3A3A3]/70 hover:text-foreground/70"
               }`}
             >
               {service.title.toUpperCase()}
