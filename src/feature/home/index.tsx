@@ -15,6 +15,7 @@ export default function Homepage() {
           <div className="h-96 bg-slate-200/50 rounded-lg animate-pulse"></div>
         </div>
       </section>
+      <Hero />
     </section>
   );
 }
