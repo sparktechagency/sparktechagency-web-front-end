@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <section className="flex h-screen justify-center items-center">
@@ -7,3 +5,4 @@ export default function Home() {
     </section>
   );
 }
+
