@@ -1,5 +1,4 @@
 import { members } from "@/constants/home-data";
-import { Avatar } from "antd";
 import { Star } from "lucide-react";
 import Image from "next/image";
 
@@ -16,7 +15,6 @@ export default function Hero() {
       className="relative w-full min-h-screen flex items-center justify-center px-4 py-20"
     >
       <div className=" container mx-auto text-center space-y-8">
-        {/* Main headline */}
         <div className="space-y-4">
           <h1 className="text-5xl lg:text-7xl font-bold leading-tight max-w-[950px] mx-auto">
             <span>Where Innovation Sparks </span>
@@ -34,14 +32,12 @@ export default function Hero() {
         border border-white/30 w-fit mx-auto
       "
         >
-          {/* Avatars */}
           <div className="flex -space-x-3 relative">
             {members.map((m, i) => (
               <div
                 key={i}
                 className="relative group cursor-pointer transition-transform duration-300 hover:-translate-y-3"
               >
-                {/* Avatar */}
                 <Image
                   key={i}
                   src={m?.img}
@@ -51,7 +47,6 @@ export default function Hero() {
                   className="border-2 border-white shadow-md hover:z-50 object-cover rounded-full h-10 w-10"
                 />
 
-                {/* Tooltip */}
                 <div
                   className="
                 absolute left-1/2 -translate-x-1/2 
@@ -67,7 +62,7 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Stars + text */}
+          {/* Stars  */}
           <div>
             <div className="flex gap-1 mb-1">
               {[...Array(5)].map((_, i) => (
@@ -82,13 +77,6 @@ export default function Hero() {
             </p>
           </div>
         </div>
-
-        {/* CTA Button */}
-        {/* <div className="pt-8">
-          <button className="px-8 py-3 bg-slate-900 text-white font-semibold rounded-full hover:bg-slate-800 transition-colors duration-300 shadow-lg hover:shadow-xl">
-            Get Started
-          </button>
-        </div> */}
       </div>
     </section>
   );
