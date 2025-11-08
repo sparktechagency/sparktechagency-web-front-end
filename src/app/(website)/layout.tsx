@@ -1,4 +1,4 @@
-import ChatBot from "@/components/shared/chatbot/Chatbot";
+import ChatBot from "@/shared/chatbot/Chatbot";
 import Navbar from "@/shared/Navbar";
 import React from "react";
 export default function layout({ children }: { children: React.ReactNode }) {
