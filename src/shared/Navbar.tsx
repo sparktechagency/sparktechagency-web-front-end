@@ -112,8 +112,8 @@ export default function Navbar({ t }: any) {
                   href={item.href}
                   className={`text-sm transition-all duration-300 ${
                     isActive
-                      ? "relative font-semibold text-primary backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
-                      : "text-slate-300 hover:text-primary/80"
+                      ? "relative font-semibold text-white backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+                      : "text-white/70 hover:text-white/90"
                   }`}
                   style={{
                     backdropFilter: isActive
