@@ -65,7 +65,7 @@ export default function Navbar({ t }: any) {
       `}
     >
       <div
-        className={`w-fit mx-auto px-4 lg:px-8  py-4 transition-colors duration-300 bg-[#080808] rounded-full`}
+        className={`w-fit mx-auto px-4 lg:px-8  py-4 transition-colors duration-300 bg-[#080808] rounded-full inner-shadow-white h-16 flex items-center justify-center`}
       >
         <div className="flex items-center justify-center">
           {/* Logo */}
@@ -81,29 +81,53 @@ export default function Navbar({ t }: any) {
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-8">
-            {navItems?.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className={`text-sm transition-all duration-300 ${
-                  item.href === pathname
-                    ? "relative font-semibold text-primary backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
-                    : "text-slate-300 hover:text-primary/80"
-                }`}
-                style={{
-                  backdropFilter:
-                    item.href === pathname
+            {navItems?.map((item, index) => {
+              const isActive = item.href === pathname;
+              const isLogoItem =
+                item.labelKey === "Sparktech" || item.href === "#";
+
+              const middleIndex = Math.floor((navItems.length - 1) / 2);
+
+              if (isLogoItem && index === middleIndex) {
+                return (
+                  <div
+                    key={index}
+                    className="flex items-center justify-center scale-[1.15] origin-center"
+                  >
+                    <Image
+                      width={600}
+                      height={600}
+                      unoptimized
+                      src="/assets/logo.png"
+                      alt="Sparktech Logo"
+                      className="h-16 w-auto p-1.5  bg-[#080808] rounded-full inner-shadow-white"
+                    />
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className={`text-sm transition-all duration-300 ${
+                    isActive
+                      ? "relative font-semibold text-primary backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+                      : "text-slate-300 hover:text-primary/80"
+                  }`}
+                  style={{
+                    backdropFilter: isActive
                       ? "blur(10px) saturate(120%)"
                       : "none",
-                  WebkitBackdropFilter:
-                    item.href === pathname
+                    WebkitBackdropFilter: isActive
                       ? "blur(10px) saturate(120%)"
                       : "none",
-                }}
-              >
-                {item.labelKey}
-              </Link>
-            ))}
+                  }}
+                >
+                  {item.labelKey}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
