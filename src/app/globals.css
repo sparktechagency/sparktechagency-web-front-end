@@ -12,6 +12,19 @@
   --color-primary: var(--primary);
 }
 
+@layer components {
+  .container {
+    @apply mx-auto px-5 max-w-[1280px];
+  }
+
+  /* Responsive container for smaller screens */
+  @media (min-width: 1536px) {
+    .container {
+      @apply max-w-[1286px];
+    }
+  }
+} 
+
 body {
   font-family: var(--font-poppins), sans-serif;
   background: var(--background);
