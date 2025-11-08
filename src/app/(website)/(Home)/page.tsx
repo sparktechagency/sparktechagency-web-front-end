@@ -1,9 +1,5 @@
-import Image from "next/image";
+import Homepage from "@/components/web-pages/home";
 
 export default function Home() {
-  return (
-    <section className="flex h-screen justify-center items-center">
-      <h1 className="text-7xl font-semibold text-red-400 text-center ">Welcome to Hell & Love <span className="text-[10px]">bdCalling 💖</span></h1>
-    </section>
-  );
+  return <Homepage />;
 }

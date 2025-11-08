@@ -15,30 +15,30 @@ const NotFoundPage = () => {
       <div className="container px-4 mx-auto">
         <div className="max-w-5xl mx-auto relative overflow-hidden bg-white/80 border border-blue-200/30 backdrop-blur-md rounded-2xl shadow-xl transition-all duration-300">
           {/* Decorative Elements */}
-          <div className="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-blue-600/20 to-teal-600/20 rounded-full blur-3xl -z-10"></div>
-          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-br from-indigo-600/20 to-cyan-600/20 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-linear-to-br from-blue-600/20 to-teal-600/20 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-linear-to-br from-indigo-600/20 to-cyan-600/20 rounded-full blur-3xl -z-10"></div>
 
           {/* Circuit-like Lines */}
           <div className="absolute inset-0 overflow-hidden opacity-10">
-            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-pulse"></div>
+            <div className="absolute top-1/4 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500 to-transparent animate-pulse"></div>
             <div
-              className="absolute top-2/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent animate-pulse"
+              className="absolute top-2/4 left-0 w-full h-px bg-linear-to-r from-transparent via-indigo-500 to-transparent animate-pulse"
               style={{ animationDelay: "1s" }}
             ></div>
             <div
-              className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent animate-pulse"
+              className="absolute top-3/4 left-0 w-full h-px bg-linear-to-r from-transparent via-cyan-500 to-transparent animate-pulse"
               style={{ animationDelay: "2s" }}
             ></div>
             <div
-              className="absolute left-1/4 top-0 h-full w-px bg-gradient-to-b from-transparent via-blue-500 to-transparent animate-pulse"
+              className="absolute left-1/4 top-0 h-full w-px bg-linear-to-b from-transparent via-blue-500 to-transparent animate-pulse"
               style={{ animationDelay: "0.5s" }}
             ></div>
             <div
-              className="absolute left-2/4 top-0 h-full w-px bg-gradient-to-b from-transparent via-indigo-500 to-transparent animate-pulse"
+              className="absolute left-2/4 top-0 h-full w-px bg-linear-to-b from-transparent via-indigo-500 to-transparent animate-pulse"
               style={{ animationDelay: "1.5s" }}
             ></div>
             <div
-              className="absolute left-3/4 top-0 h-full w-px bg-gradient-to-b from-transparent via-cyan-500 to-transparent animate-pulse"
+              className="absolute left-3/4 top-0 h-full w-px bg-linear-to-b from-transparent via-cyan-500 to-transparent animate-pulse"
               style={{ animationDelay: "2.5s" }}
             ></div>
           </div>
@@ -51,7 +51,7 @@ const NotFoundPage = () => {
                 <span>Error 404</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-600">
+              <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-teal-600">
                 Oops!
               </h1>
 
@@ -105,7 +105,7 @@ const NotFoundPage = () => {
 
                   {/* 404 Text */}
                   <div className="relative z-10 text-center">
-                    <div className="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-300">
+                    <div className="text-9xl font-black text-transparent bg-clip-text bg-linear-to-b from-gray-100 to-gray-300">
                       404
                     </div>
 
@@ -119,15 +119,15 @@ const NotFoundPage = () => {
 
                 {/* Floating Elements */}
                 <div
-                  className="absolute -top-4 -right-4 w-12 h-12 rounded-lg transform rotate-12 animate-float bg-gradient-to-br from-blue-600/30 to-teal-600/30 backdrop-blur-md border border-blue-500/20"
+                  className="absolute -top-4 -right-4 w-12 h-12 rounded-lg transform rotate-12 animate-float bg-linear-to-br from-blue-600/30 to-teal-600/30 backdrop-blur-md border border-blue-500/20"
                   style={{ animationDelay: "0s" }}
                 ></div>
                 <div
-                  className="absolute -bottom-6 -left-6 w-16 h-16 rounded-lg transform -rotate-12 animate-float bg-gradient-to-br from-indigo-600/30 to-cyan-600/30 backdrop-blur-md border border-indigo-500/20"
+                  className="absolute -bottom-6 -left-6 w-16 h-16 rounded-lg transform -rotate-12 animate-float bg-linear-to-br from-indigo-600/30 to-cyan-600/30 backdrop-blur-md border border-indigo-500/20"
                   style={{ animationDelay: "1s" }}
                 ></div>
                 <div
-                  className="absolute top-1/2 -right-8 w-10 h-10 rounded-full transform animate-float bg-gradient-to-br from-teal-600/30 to-blue-600/30 backdrop-blur-md border border-teal-500/20"
+                  className="absolute top-1/2 -right-8 w-10 h-10 rounded-full transform animate-float bg-linear-to-br from-teal-600/30 to-blue-600/30 backdrop-blur-md border border-teal-500/20"
                   style={{ animationDelay: "2s" }}
                 ></div>
               </div>
