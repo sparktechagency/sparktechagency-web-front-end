@@ -65,7 +65,7 @@ export default function Navbar({ t }: any) {
       `}
     >
       <div
-        className={`w-fit mx-auto px-4 lg:px-4  py-4 transition-colors duration-300 bg-[#080808] rounded-full`}
+        className={`w-fit mx-auto px-4 lg:px-8  py-4 transition-colors duration-300 bg-[#080808] rounded-full`}
       >
         <div className="flex items-center justify-center">
           {/* Logo */}
@@ -87,8 +87,8 @@ export default function Navbar({ t }: any) {
                 href={item.href}
                 className={`text-sm transition-all duration-300 ${
                   item.href === pathname
-                    ? "relative font-semibold px-8 py-2 rounded-full text-white bg-[#00BCD1]/20 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
-                    : "text-slate-300 hover:text-cyan-400"
+                    ? "relative font-semibold text-primary backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+                    : "text-slate-300 hover:text-primary/80"
                 }`}
                 style={{
                   backdropFilter:

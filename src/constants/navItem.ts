@@ -1,8 +1,8 @@
 const navItems = [
-  { labelKey: "explore", href: "/" },
-  { labelKey: "about", href: "/about" },
-  { labelKey: "terms", href: "/terms-condition" },
-  { labelKey: "privacy", href: "/privacy-policy" },
+  { labelKey: "Home", href: "/" },
+  { labelKey: "Services", href: "/about" },
+  { labelKey: "Life at Spark", href: "/terms-condition" },
+  { labelKey: "Sparktech", href: "#" },
 ];
 
 export default navItems;
