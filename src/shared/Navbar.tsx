@@ -1,9 +1,8 @@
 "use client";
-import React, { useState, useMemo, useEffect, useRef } from "react";
-import { DownOutlined, MenuOutlined } from "@ant-design/icons";
+import React, { useState,useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button, Dropdown, Drawer, ConfigProvider } from "antd";
+import {  Drawer, ConfigProvider } from "antd";
 
 import { usePathname } from "next/navigation";
 import navItems from "@/constants/navItem";
@@ -25,10 +24,8 @@ export default function Navbar({ t }: any) {
 
       // Hide/show logic
       if (scrollY > lastScrollTop.current && scrollY > 100) {
-        // scrolling down
         setShowNavbar(false);
       } else {
-        // scrolling up
         setShowNavbar(true);
       }
 
@@ -55,7 +52,7 @@ export default function Navbar({ t }: any) {
 
   return (
     <nav
-      className={`  z-50 w-full  navbar-container 
+      className={`  z-50 w-full  navbar-container   transition-all duration-500 ease-in-out
         ${
           isScrolled
             ? "fixed top-10"

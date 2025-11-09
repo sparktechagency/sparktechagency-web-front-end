@@ -2,7 +2,7 @@ import Hero from "@/feature/home/Hero";
 import React from "react";
 import WhatWeDoSection from "./what-we-do/WhatWeDoSection";
 import WhoWeAre from "./WhoWeAre";
-import BoostYourBusiness from "./BoostYourBusiness";
+import BoostYourBusiness from "./why-us/BoostYourBusiness";
 
 export default function Homepage() {
   return (
@@ -10,7 +10,8 @@ export default function Homepage() {
       <Hero /> 
       <WhoWeAre /> 
       <WhatWeDoSection />
-      <BoostYourBusiness />
+      <BoostYourBusiness /> 
+            <WhatWeDoSection />
     </section>
   );
 }
