@@ -12,7 +12,7 @@ export default function Hero() {
         backgroundPosition: "center",
       }}
       id="banner"
-      className="relative w-full min-h-screen flex items-center justify-center px-4 py-20"
+      className="relative w-full min-h-screen flex items-center justify-center px-4 py-20 "
     >
       <div className=" container mx-auto text-center space-y-8">
         <div className="space-y-4">

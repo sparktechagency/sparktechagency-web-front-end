@@ -3,6 +3,11 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import AntProvider from "@/lib/context/AntProvider";
 import { Toaster } from "sonner";
+import dynamic from 'next/dynamic'
+
+const SmoothScrollProvider = dynamic(
+  () => import('@/ui/SmoothScrollProvider')
+)
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -27,7 +32,9 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${poppins.variable}  antialiased`}>
           <Toaster position="top-center" duration={2000} />
-          {children}
+          <SmoothScrollProvider>
+            {children}
+          </SmoothScrollProvider>
         </body>
       </html>
     </AntProvider>

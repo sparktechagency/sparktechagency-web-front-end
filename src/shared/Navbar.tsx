@@ -1,8 +1,8 @@
 "use client";
-import React, { useState,useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {  Drawer, ConfigProvider } from "antd";
+import { Drawer, ConfigProvider } from "antd";
 
 import { usePathname } from "next/navigation";
 import navItems from "@/constants/navItem";
@@ -14,49 +14,41 @@ export default function Navbar({ t }: any) {
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScrollTop = useRef(0);
 
-  useEffect(() => {
+ useEffect(() => {
+    if (typeof window === "undefined") return; // Ensuring window is available on the client
+
     const handleScroll = () => {
       const bannerHeight = document.getElementById("banner")?.offsetHeight || 0;
-      const scrollY = globalThis.scrollY;
-      // console.log("scroll", scrollY);
-      // Change navbar background after banner
+      const scrollY = window.scrollY;
+
+      // Change navbar background after banner height
       setIsScrolled(scrollY > bannerHeight - 80);
 
-      // Hide/show logic
+      // Hide/show navbar based on scroll direction
       if (scrollY > lastScrollTop.current && scrollY > 100) {
-        setShowNavbar(false);
+        setShowNavbar(false); // Hide navbar when scrolling down
       } else {
-        setShowNavbar(true);
+        setShowNavbar(true); // Show navbar when scrolling up
       }
 
       lastScrollTop.current = scrollY <= 0 ? 0 : scrollY;
     };
 
-    globalThis.addEventListener("scroll", handleScroll);
-    // console.log("inside");
-    return () => globalThis.removeEventListener("scroll", handleScroll);
-  }, []);
-  useEffect(() => {
-    const handleScroll = () => {
-      const bannerHeight = document.getElementById("banner")?.offsetHeight || 0;
-      if (window.scrollY > bannerHeight - 80) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
+    // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
+    return () => {
+      // Cleanup event listener on component unmount
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); 
 
   return (
     <nav
       className={`  z-50 w-full  navbar-container   transition-all duration-500 ease-in-out
-        ${
-          isScrolled
-            ? "fixed top-10"
-            : "bg-transparent lg:bg-transparent md:px-8 2xl:px-0  lg:backdrop-blur-none absolute top-[700px]  lg:mt-10 "
+        ${isScrolled
+          ? "fixed top-10"
+          : "bg-transparent lg:bg-transparent md:px-8 2xl:px-0  lg:backdrop-blur-none absolute top-[700px]  lg:mt-10 "
         }
     
       `}
@@ -107,11 +99,10 @@ export default function Navbar({ t }: any) {
                 <Link
                   key={index}
                   href={item.href}
-                  className={`text-sm transition-all duration-300 ${
-                    isActive
+                  className={`text-sm transition-all duration-300 ${isActive
                       ? "relative font-semibold text-white backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                       : "text-white/70 hover:text-white/90"
-                  }`}
+                    }`}
                   style={{
                     backdropFilter: isActive
                       ? "blur(10px) saturate(120%)"
@@ -163,11 +154,10 @@ export default function Navbar({ t }: any) {
               <Link
                 key={index}
                 href={item.href}
-                className={`${
-                  item.href === pathname
+                className={`${item.href === pathname
                     ? "relative font-semibold pl-4 -ml-4 py-2 rounded-lg text-white! bg-[#00BCD1]/20! backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                     : "text-white! hover:text-cyan-400"
-                } text-base   transition-all`}
+                  } text-base   transition-all`}
                 onClick={() => setDrawerOpen(false)}
               >
                 {item.labelKey}

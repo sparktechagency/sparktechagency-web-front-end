@@ -5,13 +5,21 @@ import WhoWeAre from "./WhoWeAre";
 import BoostYourBusiness from "./why-us/BoostYourBusiness";
 
 export default function Homepage() {
+
   return (
-    <section className="relative">
-      <Hero /> 
-      <WhoWeAre /> 
-      <WhatWeDoSection />
-      <BoostYourBusiness /> 
-            <WhatWeDoSection />
-    </section>
+    <main  >
+      <section >
+        <Hero />
+      </section>
+      <section >
+        <WhoWeAre />
+      </section>
+      <section >
+        <WhatWeDoSection />
+      </section>
+      <section >
+        <BoostYourBusiness />
+      </section>
+    </main>
   );
 }
