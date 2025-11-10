@@ -5,12 +5,11 @@ gsap.registerPlugin(ScrollTrigger);
 import Contains from "./Contains";
 import dynamic from "next/dynamic";
 
-const ClientGsap = dynamic(() => import('@/ui/ClientGsap'))
+const ClientGsap = dynamic(() => import("@/ui/ClientGsap"));
 const BoostYourBusiness = () => {
-
   return (
     <div
-     id="boost-container"
+      id="boost-container"
       className="relative h-screen w-full bg-linear-to-b from-[#041504] to-[#09320A] overflow-hidden flex flex-col items-center justify-center text-white"
     >
       {/* Rotating Earth Background */}
@@ -27,8 +26,8 @@ const BoostYourBusiness = () => {
       {/* Text Section */}
       <div className="relative container z-[999px] ">
         <Contains />
-      </div> 
-        <ClientGsap targetId="boost-container" contentId="boost-content" />
+      </div>
+      <ClientGsap targetId="boost-container" contentId="boost-content" />
     </div>
   );
 };

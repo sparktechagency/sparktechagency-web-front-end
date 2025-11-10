@@ -28,7 +28,7 @@ export default function WhatWeDoRight({
 
   return (
     <div className="flex flex-col items-center justify-center gap-8 ">
-      <div className="relative w-full h-64 lg:h-80 2xl:h-[500px] flex items-center justify-center overflow-hidden  rounded-lg ">
+      <div className="relative w-full h-64 lg:h-max 2xl:h-[500px] flex items-center justify-center overflow-hidden  rounded-lg ">
         {/* Background image behind pyramid */}
         {activeService && (
           <div
@@ -38,7 +38,7 @@ export default function WhatWeDoRight({
             <img
               src={activeService.backgroundImage || "/placeholder.svg"}
               alt={activeService.title}
-              className="w-full h-[80%] object-contain animate-rotate360"
+              className="w-full lg:h-[70%] 2xl:h-[80%] object-contain animate-rotate360"
             />
           </div>
         )}

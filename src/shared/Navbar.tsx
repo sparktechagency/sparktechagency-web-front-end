@@ -55,8 +55,8 @@ export default function Navbar({ t }: any) {
       className={`  z-50 w-full  navbar-container   transition-all duration-500 ease-in-out
         ${
           isScrolled
-            ? "fixed top-10"
-            : "bg-transparent lg:bg-transparent md:px-8 2xl:px-0  lg:backdrop-blur-none absolute top-[700px]  lg:mt-10 "
+            ? "fixed top-5 2xl:top-10"
+            : "bg-transparent lg:bg-transparent md:px-8 2xl:px-0  lg:backdrop-blur-none absolute top-[480px] 2xl:top-[700px]  lg:mt-10 "
         }
     
       `}
