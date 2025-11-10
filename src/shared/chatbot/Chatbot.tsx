@@ -35,7 +35,7 @@ export default function ChatBot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-24 right-6 lg:right-20 md:bottom-8 lg:bottom-24 md:right-8 w-16 h-16 rounded-full  hover:scale-110 transition-all duration-300 flex items-center justify-center z-40 custom-shadow cursor-pointer"
+          className="fixed bottom-24 right-6 lg:right-20 md:bottom-8 lg:bottom-24 md:right-8 w-16 h-16 rounded-full  hover:scale-110 transition-all duration-300 flex items-center justify-center z-40 custom-shadow cursor-pointer backdrop-blur-sm"
         >
           <Image src="/assets/chatbot-logo.png" alt="chatbot Logo" height={80} width={80} className="h-9 w-9 object-fill mt-2" />
         </button>

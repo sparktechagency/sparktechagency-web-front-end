@@ -3,6 +3,8 @@ import React from "react";
 import WhatWeDoSection from "./what-we-do/WhatWeDoSection";
 import WhoWeAre from "./WhoWeAre";
 import BoostYourBusiness from "./why-us/BoostYourBusiness";
+import SuccessfulProject from "./successful-project/SuccessfulProject";
+import { SparklansSection } from "./sparkians-section";
 
 export default function Homepage() {
 
@@ -19,6 +21,10 @@ export default function Homepage() {
       </section>
       <section >
         <BoostYourBusiness />
+      </section>
+      <section >
+       <SuccessfulProject />
+      <SparklansSection />
       </section>
     </main>
   );

@@ -27,9 +27,8 @@ export default function Hero() {
         {/* Social proof */}
         <div
           className="
-        flex items-center justify-center gap-4 py-4 px-6 rounded-full
-        bg-white/10 backdrop-blur-2xl shadow-lg 
-        border border-white/30 w-fit mx-auto
+        flex items-center justify-center gap-4 py-4 px-6 rounded-full backdrop-blur-sm shadow-sm 
+        border border-white/80 w-fit mx-auto 
       "
         >
           <div className="flex -space-x-3 relative">

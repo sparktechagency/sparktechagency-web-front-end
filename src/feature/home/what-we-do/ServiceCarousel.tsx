@@ -2,7 +2,6 @@
 
 import { Service } from "@/constants/services";
 
-
 interface ServiceCarouselProps {
   services: Service[];
   activeIndex: number;
@@ -18,7 +17,7 @@ export default function ServiceCarousel({
 }: ServiceCarouselProps) {
   return (
     <div className="w-full space-y-8 flex flex-col justify-end text-end">
-      {services.map((service, index) => {
+      {services?.map((service, index) => {
         const isActive = index === activeIndex;
 
         return (
@@ -38,7 +37,7 @@ export default function ServiceCarousel({
               className={` tracking-wide transition-all duration-300 ${
                 isActive
                   ? "text-2xl lg:text-3xl 2xl:text-4xl text-[#606060] font-semibold"
-                  : "text-lg lg:text-xl text-[#A3A3A3]/70 hover:text-foreground/70"
+                  : "text-lg lg:text-xl 2xl:text-2xl text-[#A3A3A3]/70 hover:text-foreground/70"
               }`}
             >
               {service.title.toUpperCase()}

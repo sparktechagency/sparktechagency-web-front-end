@@ -44,7 +44,7 @@ export const services: Service[] = [
     title: "AI-Powered Development",
     description:
       "Leverage artificial intelligence to build intelligent solutions. We integrate ML models for predictive analytics and automation.",
-    backgroundImage: "/assets/vectors/vector1.png",
+    backgroundImage: "/assets/vectors/vector5.png",
     features: ["Machine Learning", "Data Analytics", "Automation"],
   },
   {
@@ -52,7 +52,7 @@ export const services: Service[] = [
     title: "Consultation Service",
     description:
       "Expert guidance for your digital transformation journey. We analyze your needs and recommend tailored solutions for growth.",
-    backgroundImage: "/assets/vectors/vector2.png",
+    backgroundImage: "/assets/vectors/vector1.png",
     features: [
       "Strategy Planning",
       "Tech Stack Evaluation",
