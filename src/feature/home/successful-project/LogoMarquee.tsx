@@ -43,7 +43,7 @@ const LogoCard = ({ src }: { src: string }) => {
 export default function LogoMarquee() {
   return (
     <div className="w-full space-y-9">
-      {/* ✅ Top Row - moves left */}
+      {/* Top Row- left */}
       <Marquee
         pauseOnHover={true}
         speed={50}
@@ -51,12 +51,12 @@ export default function LogoMarquee() {
         autoFill
         direction="right"
       >
-        {logosTop.map((src, i) => (
+        {logosTop?.map((src, i) => (
           <LogoCard key={i} src={src} />
         ))}
       </Marquee>
 
-      {/* ✅ Bottom Row - moves right */}
+      {/* Bottom Row- right */}
       <Marquee
         pauseOnHover={true}
         speed={50}
@@ -64,7 +64,7 @@ export default function LogoMarquee() {
         direction="left"
         autoFill
       >
-        {logosBottom.map((src, i) => (
+        {logosBottom?.map((src, i) => (
           <LogoCard key={i} src={src} />
         ))}
       </Marquee>
