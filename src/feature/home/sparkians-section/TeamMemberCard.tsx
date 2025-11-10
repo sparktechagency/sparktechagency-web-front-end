@@ -35,7 +35,7 @@ export function TeamMemberCard({
       <video
         ref={onVideoRef}
         src={member.video}
-        className={`w-full h-80 object-cover object-top transition-opacity duration-300 ${
+        className={`w-full h-80 lg:h-[430px] object-cover object-top transition-opacity duration-300 ${
           isPlaying ? "opacity-100" : "opacity-0 absolute"
         }`}
         autoPlay={isPlaying}
@@ -49,7 +49,7 @@ export function TeamMemberCard({
           height={500}
           src={member.thumbnail || "/placeholder.svg"}
           alt={member.name}
-          className="w-full h-80 object-cover object-top"
+          className="w-full h-80 lg:h-[430px] object-cover object-top"
         />
       )}
 

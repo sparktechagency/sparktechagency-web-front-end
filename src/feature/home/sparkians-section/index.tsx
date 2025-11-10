@@ -91,7 +91,7 @@ export function SparklansSection() {
           onSlideChange={handleSlideChange}
           className="swiper-container"
         >
-          {TEAM_MEMBERS.map((member) => (
+          {TEAM_MEMBERS?.map((member) => (
             <SwiperSlide key={member.id}>
               <TeamMemberCard
                 member={member}
