@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container flex flex-col md:flex-row  justify-between items-center md:flex-center    text-white pb-5 ">
+      <div className="container flex flex-col md:flex-row  justify-between items-center md:flex-center    text-white pb-14 ">
         <div className=" flex items-center gap-4   text-white">
           {/* Download Button */}
           <a
@@ -69,7 +69,7 @@ const Footer = () => {
             <p className="text-sm text-[#7d7d82] font-medium">PDF, 17 MB</p>
           </div>
         </div>
-        <p className="text-[#F1F1F1] text-[16px] mb-0 justify-end">
+        <p className="text-[#b9b8b8] text-sm mb-0 justify-end">
          © Copyright 2025 Sparktech agency  All Rights Reserved. | Powered by Sparktech
         </p>
       </div>

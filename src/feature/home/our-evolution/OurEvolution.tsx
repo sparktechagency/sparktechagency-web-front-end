@@ -6,7 +6,7 @@ import { OurEvolutionData } from "@/constants/home-data";
 const OurEvolution = () => {
 
   return (
-    <div className="py-[100px] container mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
+    <div className="pb-[100px] container mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
       {/* Left side */}
       <div className="flex-1 ">
         <p className="text-[32px] text-[#8BC53F] font-semibold pb-2">
@@ -18,8 +18,10 @@ const OurEvolution = () => {
       </div>
 
       {/* Timeline */}
-      <div className="flex-1 max-h-[485px] overflow-y-auto ">
+      <div className="flex-1 max-h-[485px] w-full overflow-y-auto  "> 
+        <div className=" flex items-center justify-end"> 
         <Timeline items={OurEvolutionData} />
+        </div>
       </div> 
 
     </div>
