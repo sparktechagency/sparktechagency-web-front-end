@@ -8,7 +8,7 @@ export default function Services() {
       <PageBanner
         isPrimary={true}
         title={"Our Services"}
-        description="At Spark Tech Agency, we harness the power of modern technologies to craft intelligent, scalable, and future-ready solutions. From AI & cloud platforms to robust web & mobile frameworks, our stack empowers businesses to stay ahead in the digital era."
+        subtitle="At Spark Tech Agency, we harness the power of modern technologies to craft intelligent, scalable, and future-ready solutions. From AI & cloud platforms to robust web & mobile frameworks, our stack empowers businesses to stay ahead in the digital era."
       />
       <WhatWeDo />
     </section>
