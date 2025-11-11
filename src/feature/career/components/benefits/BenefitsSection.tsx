@@ -5,7 +5,7 @@ export function BenefitsSection() {
   return (
     <section className="container py-20">
       {/* Header Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 items-center">
         {/* Left Column - Title */}
         <div className="lg:col-span-2">
           <span className="inline-block text-primary font-semibold text-[32px] mb-2 tracking-wide">
@@ -15,7 +15,7 @@ export function BenefitsSection() {
         </div>
 
         {/* Right Column - Description with Icon */}
-        <div className="flex flex-col items-start lg:items-end gap-6">
+        <div className="flex flex-col items-end lg:items-end gap-6">
           <p className="section-subtitle">
             Empower your business with innovative digital experiences. Our
             expert team combines strategy, design, and technology. Together, we
@@ -25,9 +25,9 @@ export function BenefitsSection() {
       </div>
 
       {/* Benefits Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+      <div className="flex flex-wrap w-full  gap-3 md:gap-4">
         {benefitsData?.map((benefit) => (
-          <BenefitCard key={benefit.id} label={benefit.label} />
+          <BenefitCard key={benefit.id} benefit={benefit} />
         ))}
       </div>
     </section>
