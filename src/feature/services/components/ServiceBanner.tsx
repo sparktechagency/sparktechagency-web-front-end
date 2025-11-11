@@ -20,7 +20,7 @@ export default function PageBanner({
     if (isPrimary && imgRef.current) {
       gsap.to(imgRef.current, {
         rotate: 360,
-        duration: 50,
+        duration: 70,
         ease: "none",
         repeat: -1,
       });
