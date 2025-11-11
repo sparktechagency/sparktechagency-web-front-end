@@ -14,7 +14,7 @@ const Spinner = () => {
           height={200}
           unoptimized
           priority
-          className="w-[200px] h-[100px]"
+          className="w-full h-[100px]"
         />
       </div>
 
