@@ -15,7 +15,7 @@ export default function WhatWeDoSection() {
 
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % services.length);
-    }, 5000);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [isAutoPlay, services.length]);
