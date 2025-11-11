@@ -3,9 +3,12 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Drawer, ConfigProvider } from "antd";
-
 import { usePathname } from "next/navigation";
 import navItems from "@/constants/navItem";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+
+// gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar({ t }: any) {
   const pathname = usePathname();
@@ -14,8 +17,8 @@ export default function Navbar({ t }: any) {
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScrollTop = useRef(0);
 
- useEffect(() => {
-    if (typeof window === "undefined") return; // Ensuring window is available on the client
+  useEffect(() => {
+    if (typeof window === "undefined") return;
 
     const handleScroll = () => {
       const bannerHeight = document.getElementById("banner")?.offsetHeight || 0;
@@ -41,16 +44,21 @@ export default function Navbar({ t }: any) {
       // Cleanup event listener on component unmount
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); 
+  }, []);
+
+  
+
 
   return (
     <nav
-      className={`  z-50 w-full  navbar-container   transition-all duration-500 ease-in-out
+      id="navbar"
+      className={` z-50 w-full  navbar-container   transition-all duration-500 ease-in-out
         ${
           isScrolled
-            ? "fixed top-5 2xl:top-10"
-            : "bg-transparent lg:bg-transparent md:px-8 2xl:px-0  lg:backdrop-blur-none absolute top-[480px] 2xl:top-[760px]  lg:mt-10 "
+            ? "fixed top-5 2xl:top-20"
+            : "bg-transparent lg:bg-transparent md:px-8 2xl:px-0  lg:backdrop-blur-none absolute   lg:mt-10 "
         }
+        ${showNavbar ? "translate-y-0" : "-translate-y-28"}
     
       `}
     >
@@ -100,10 +108,11 @@ export default function Navbar({ t }: any) {
                 <Link
                   key={index}
                   href={item.href}
-                  className={`text-sm transition-all duration-300 ${isActive
+                  className={`text-sm transition-all duration-300 ${
+                    isActive
                       ? "relative font-semibold text-white backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                       : "text-white/70 hover:text-white/90"
-                    }`}
+                  }`}
                   style={{
                     backdropFilter: isActive
                       ? "blur(10px) saturate(120%)"
@@ -155,10 +164,11 @@ export default function Navbar({ t }: any) {
               <Link
                 key={index}
                 href={item.href}
-                className={`${item.href === pathname
+                className={`${
+                  item.href === pathname
                     ? "relative font-semibold pl-4 -ml-4 py-2 rounded-lg text-white! bg-[#00BCD1]/20! backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                     : "text-white! hover:text-cyan-400"
-                  } text-base   transition-all`}
+                } text-base   transition-all`}
                 onClick={() => setDrawerOpen(false)}
               >
                 {item.labelKey}

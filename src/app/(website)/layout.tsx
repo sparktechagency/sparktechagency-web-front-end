@@ -1,6 +1,7 @@
 import ChatBot from "@/shared/chatbot/Chatbot";
 import Footer from "@/shared/Footer";
 import Navbar from "@/shared/Navbar";
+import { Button } from "antd";
 import React from "react";
 export default function layout({ children }: { children: React.ReactNode }) {
   return (

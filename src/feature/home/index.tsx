@@ -6,25 +6,26 @@ import BoostYourBusiness from "./why-us/BoostYourBusiness";
 import SuccessfulProject from "./successful-project/SuccessfulProject";
 import { SparklansSection } from "./sparkians-section";
 import OurEvolution from "./our-evolution/OurEvolution";
+import SliderSection from "./spark-quarter/SparkQuarter";
 
 export default function Homepage() {
-
   return (
-    <main  >
-      <section >
+    <main>
+      <section>
         <Hero />
       </section>
-      <section >
+      <section>
         <WhoWeAre />
       </section>
-      <section >
+      <section>
         <WhatWeDoSection />
       </section>
-      <section >
+      <section>
         <BoostYourBusiness />
       </section>
-       <SuccessfulProject />
-      <SparklansSection /> 
+       <SuccessfulProject /> 
+      <SparklansSection />  
+      <SliderSection />
       <OurEvolution />
     </main> 
   );
