@@ -1,6 +1,6 @@
 const navItems = [
   { labelKey: "Home", href: "/" },
-  { labelKey: "Services", href: "/about" },
+  { labelKey: "Services", href: "/services" },
   { labelKey: "Life at Spark", href: "/terms-condition" },
   { labelKey: "Sparktech", href: "#" },
   { labelKey: "Company", href: "/company" },

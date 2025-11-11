@@ -46,9 +46,6 @@ export default function Navbar({ t }: any) {
     };
   }, []);
 
-  
-
-
   return (
     <nav
       id="navbar"
@@ -108,19 +105,11 @@ export default function Navbar({ t }: any) {
                 <Link
                   key={index}
                   href={item.href}
-                  className={`text-sm transition-all duration-300 ${
+                  className={`text-sm  ${
                     isActive
                       ? "relative font-semibold text-white backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                       : "text-white/70 hover:text-white/90"
                   }`}
-                  style={{
-                    backdropFilter: isActive
-                      ? "blur(10px) saturate(120%)"
-                      : "none",
-                    WebkitBackdropFilter: isActive
-                      ? "blur(10px) saturate(120%)"
-                      : "none",
-                  }}
                 >
                   {item.labelKey}
                 </Link>
