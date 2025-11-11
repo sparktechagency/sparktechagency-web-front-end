@@ -38,38 +38,10 @@ const Footer = () => {
             <p className="text-base  flex items-center gap-2 "><span><MdLocalPhone size={16} /> </span> <span>+924-6789786 </span></p>
             <p className="text-base lg:max-w-[350px] flex items-start gap-2 "><span><MdLocationOn size={18} /> </span> <span> Aqua Tower 43, Mohakhali C/A Level - 7, 8, 9, 10, 11, Dhaka, Bangladesh </span></p>
           </div>
-
-          <div className="flex space-x-4 mb-4">
-            <Link href="https://www.linkedin.com" passHref>
-              <p className="text-white hover:text-gray-400">
-                <i className="fab fa-linkedin-in"></i>
-              </p>
-            </Link>
-            <Link href="https://www.pinterest.com" passHref>
-              <p className="text-white hover:text-gray-400">
-                <i className="fab fa-pinterest"></i>
-              </p>
-            </Link>
-            <Link href="https://www.instagram.com" passHref>
-              <p className="text-white hover:text-gray-400">
-                <i className="fab fa-instagram"></i>
-              </p>
-            </Link>
-            <Link href="https://www.facebook.com" passHref>
-              <p className="text-white hover:text-gray-400">
-                <i className="fab fa-facebook-f"></i>
-              </p>
-            </Link>
-            <Link href="https://www.github.com" passHref>
-              <p className="text-white hover:text-gray-400">
-                <i className="fab fa-github"></i>
-              </p>
-            </Link>
-          </div>
         </div>
       </div>
 
-      <div className="w-full pt-12 pb-20 ">
+      <div className="w-full pt-14 pb-20 ">
         <div className=" bg-linear-to-r from-[#051D05] via-[#178317] to-[#062106] max-w-[400px] h-1 flex items-center justify-center mx-auto" />
         <div className="flex items-center justify-center  gap-4">
           {socialMedias.map((socialMedia, index) => (
