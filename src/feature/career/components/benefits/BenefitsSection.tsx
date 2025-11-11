@@ -25,7 +25,7 @@ export function BenefitsSection() {
       </div>
 
       {/* Benefits Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+      <div className="flex flex-wrap  gap-4">
         {benefitsData?.map((benefit) => (
           <BenefitCard key={benefit.id} label={benefit.label} />
         ))}
