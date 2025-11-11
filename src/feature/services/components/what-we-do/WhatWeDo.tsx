@@ -1,4 +1,6 @@
+import { servicesData } from "@/constants/servicesData";
 import React from "react";
+import { ServiceSection } from "./ServiceSection";
 
 export default function WhatWeDo() {
   return (
@@ -9,6 +11,11 @@ export default function WhatWeDo() {
           Hire STA, get expert advice, or hand over your project & chill –We've
           got your back, no brainer.
         </p>
+      </div>
+      <div>
+        {servicesData?.map((service, index) => (
+          <ServiceSection key={service.id} service={service} index={index} />
+        ))}
       </div>
     </section>
   );

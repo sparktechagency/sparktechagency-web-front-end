@@ -1,5 +1,5 @@
 import React from "react";
-import PageBanner from "./components/ServiceBanner";
+import PageBanner from "../../shared/PageBanner";
 import WhatWeDo from "./components/what-we-do/WhatWeDo";
 
 export default function Services() {
