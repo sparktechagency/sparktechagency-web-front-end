@@ -6,13 +6,13 @@ import gsap from "gsap";
 interface serviceBannerProps {
   isPrimary?: boolean;
   title: string;
-  description: string;
+  subtitle: string;
 }
 
 export default function PageBanner({
   isPrimary = false,
   title,
-  description,
+  subtitle,
 }: serviceBannerProps) {
   const imgRef = useRef<HTMLImageElement | null>(null);
 
@@ -20,7 +20,7 @@ export default function PageBanner({
     if (isPrimary && imgRef.current) {
       gsap.to(imgRef.current, {
         rotate: 360,
-        duration: 70,
+        duration: 80,
         ease: "none",
         repeat: -1,
       });
@@ -29,7 +29,7 @@ export default function PageBanner({
 
   return (
     <section
-      className={`min-h-[517px] 2xl:min-h-[617px] ${
+      className={`min-h-[70vh] 2xl:min-h-[70vh] ${
         isPrimary ? "bg-spark" : "bg-[#EFEDF0]"
       } flex flex-col justify-center items-center text-center rounded-b-[90px] relative overflow-hidden z-10`}
     >
@@ -42,7 +42,7 @@ export default function PageBanner({
           {title}
         </h1>
         <p className="text-[#999999] leading-[150%] max-w-[880px]">
-          {description}
+          {subtitle}
         </p>
       </div>
 
@@ -54,7 +54,7 @@ export default function PageBanner({
             alt="rocket"
             width={1000}
             height={800}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 -z-10 opacity-45"
+            className="absolute lg:w-[66%] 2xl:w-[52%] bottom-0 left-1/2 -translate-x-1/2 translate-y-[52%] -z-10 opacity-45"
           />
 
           {/* Black gradient overlay */}
