@@ -67,15 +67,11 @@ export default function Navbar() {
                 <Link
                   key={index}
                   href={item.href}
-                  className={`text-sm transition-all duration-300 ${
+                  className={`text-sm  ${
                     isActive
                       ? "relative font-semibold text-white"
                       : "text-white/70 hover:text-white"
                   }`}
-                  style={{
-                    backdropFilter: isActive ? "blur(10px) saturate(120%)" : "none",
-                    WebkitBackdropFilter: isActive ? "blur(10px) saturate(120%)" : "none",
-                  }}
                 >
                   {item.labelKey}
                 </Link>

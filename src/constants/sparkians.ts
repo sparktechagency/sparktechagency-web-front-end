@@ -23,9 +23,9 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: "4",
-    name: "Asaduzzaman Khan",
-    title: "ELF Member",
-    thumbnail: "/assets/thumbnails/asad.png",
+    name: "Shanto",
+    title: "LF Member",
+    thumbnail: "/assets/thumbnails/shanto.png",
     video: "https://example.com/video4.mp4",
   },
   {
@@ -49,6 +49,13 @@ export const TEAM_MEMBERS: TeamMember[] = [
     title: "ELF Member",
     thumbnail: "/assets/thumbnails/arif.png",
     video: "https://example.com/video5.mp4",
+  },
+   {
+    id: "8",
+    name: "Asaduzzaman Khan",
+    title: "ELF Member",
+    thumbnail: "/assets/thumbnails/asad.png",
+    video: "https://example.com/video4.mp4",
   },
 ];
 
