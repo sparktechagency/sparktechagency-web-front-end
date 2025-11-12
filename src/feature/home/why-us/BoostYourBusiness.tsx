@@ -10,7 +10,7 @@ const BoostYourBusiness = () => {
   return (
     <div
       id="boost-container"
-      className="relative min-h-screen w-full bg-linear-to-b from-[#041504] to-[#09320A] overflow-hidden flex flex-col lg:items-center lg:justify-center text-white"
+      className="relative min-h-screen w-full bg-linear-to-b from-[#041504] to-[#09320A] overflow-hidden flex flex-col lg:items-center lg:justify-center text-white pb-16 lg:pb-0"
     >
       {/* Rotating Earth Background */}
       <div className="absolute top-[53%] flex items-end justify-center">
