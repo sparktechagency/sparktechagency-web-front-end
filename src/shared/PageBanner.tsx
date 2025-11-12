@@ -19,7 +19,7 @@ export default function PageBanner({
   useEffect(() => {
     if (isPrimary && imgRef.current) {
       gsap.to(imgRef.current, {
-        rotate: 360,
+        rotate: -360,
         duration: 80,
         ease: "none",
         repeat: -1,
@@ -54,7 +54,7 @@ export default function PageBanner({
             alt="rocket"
             width={1000}
             height={800}
-            className="absolute lg:w-[66%] 2xl:w-[52%] bottom-0 left-1/2 -translate-x-1/2 translate-y-[52%] -z-10 opacity-45"
+            className="absolute lg:w-[66%] 2xl:w-[52%] bottom-0 left-1/2 -translate-x-1/2 translate-y-[52%] -z-10 opacity-55"
           />
 
           {/* Black gradient overlay */}

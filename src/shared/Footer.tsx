@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareBehance } from "react-icons/fa6";
-import { IoLogoFacebook, IoLogoPinterest, IoLogoYoutube, IoMailUnreadSharp } from "react-icons/io5";
+import {  IoLogoFacebook, IoLogoPinterest, IoLogoYoutube, IoMailUnreadSharp } from "react-icons/io5";
 import { MdLocalPhone, MdLocationOn } from "react-icons/md";
 import { RiInstagramFill } from "react-icons/ri";
+import Upbutton from "./Upbutton";
 
 const socialMedias = [
   { icon: <FaLinkedin />, link: "mailto:ZvV1l@example.com" },
@@ -53,7 +54,7 @@ const Footer = () => {
       </div>
 
       <div className="container flex flex-col md:flex-row  justify-between items-center md:flex-center    text-white pb-14 ">
-        <div className=" flex items-center gap-4   text-white">
+        <div className=" flex items-center gap-2.5   text-white">
           {/* Download Button */}
           <a
             href="https://drive.google.com/file/d/1rg_CRbQDkNwv0j2QWlA16vD2tMaxJNYu/view?usp=sharing"
@@ -65,13 +66,17 @@ const Footer = () => {
 
           {/* Text Section */}
           <div className="flex flex-col  gap-y-1 leading-tight">
-            <p className="text-[16px] lg:text-2xl font-light text-[#F1F1F1]">Company Deck</p>
+            <p className="text-[16px] lg:text-[22px] font-light text-[#F1F1F1]">Company Desk</p>
             <p className="text-sm text-[#7d7d82] font-medium">PDF, 17 MB</p>
           </div>
         </div>
-        <p className="text-[#b9b8b8] text-sm mb-0 justify-end">
-         © Copyright 2025 Sparktech agency  All Rights Reserved. | Powered by Sparktech
-        </p>
+
+        <div className="flex items-center  justify-end gap-4 ">
+          <p className="text-[#c7c4c4] text-sm mb-0 ">
+            © Copyright 2025 Sparktech agency  All Rights Reserved. | Powered by Sparktech
+          </p>
+          <Upbutton />
+        </div>
       </div>
     </footer>
   );

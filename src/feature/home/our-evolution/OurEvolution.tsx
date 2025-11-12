@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Timeline } from "antd";
+import { ConfigProvider, Timeline } from "antd";
 import { OurEvolutionData } from "@/constants/home-data";
 
 const OurEvolution = () => {
@@ -18,11 +18,21 @@ const OurEvolution = () => {
       </div>
 
       {/* Timeline */}
-      <div className="flex-1 max-h-[485px] w-full overflow-y-auto  "> 
-        <div className=" flex items-center justify-end"> 
-        <Timeline items={OurEvolutionData} />
+      <div className="flex-1 max-h-[485px] w-full overflow-y-auto  ">
+        <div className=" flex items-center justify-end">
+          <ConfigProvider
+            theme={{
+              components: {
+                Timeline: {
+                  itemPaddingBottom: 60,
+                },
+              },
+            }}
+          >
+            <Timeline items={OurEvolutionData} />
+          </ConfigProvider>
         </div>
-      </div> 
+      </div>
 
     </div>
   );

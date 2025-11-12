@@ -35,7 +35,7 @@ export default function ChatBot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-24 right-6 lg:right-20 md:bottom-8 lg:bottom-24 md:right-8 w-16 h-16 rounded-full  hover:scale-110 transition-all duration-300 flex items-center justify-center z-40 custom-shadow cursor-pointer backdrop-blur-sm"
+          className="fixed bottom-24 right-6 lg:right-20 md:bottom-8 lg:bottom-[300px] md:right-8 w-16 h-16 rounded-full  hover:scale-110 transition-all duration-300 flex items-center justify-center z-40 custom-shadow cursor-pointer backdrop-blur-sm"
         >
           <Image src="/assets/chatbot-logo.png" alt="chatbot Logo" height={80} width={80} className="h-9 w-9 object-fill mt-2" />
         </button>
@@ -47,7 +47,7 @@ export default function ChatBot() {
           {/* Header */}
           <div className="bg-linear-to-r from-lime-400 to-green-500 p-4 rounded-t-2xl flex items-center justify-between">
             <div>
-              <h3 className="font-bold text-slate-900">Sparktech Support</h3>
+              <h3 className="font-bold text-gray-800">Sparktech Support</h3>
               <p className="text-xs text-slate-700">Always here to help</p>
             </div>
             <button
