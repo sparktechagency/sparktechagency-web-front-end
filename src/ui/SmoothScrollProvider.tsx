@@ -19,7 +19,7 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
             smootherRef.current = ScrollSmoother.create({
                 smooth: 1.2,
                 effects: true ,
-                smoothTouch: 0.1
+                smoothTouch: 0.9
             })
         } else {
             smootherRef.current.refresh()
