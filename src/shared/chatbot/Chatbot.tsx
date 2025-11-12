@@ -43,7 +43,7 @@ export default function ChatBot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 md:bottom-8 lg:bottom-24 right-6   md:right-8 lg:right-20 w-full max-w-sm bg-white rounded-2xl shadow-2xl flex flex-col z-40 h-96 md:h-[500px]">
+        <div className="fixed bottom-24 md:bottom-8 lg:bottom-[300px] right-6   md:right-8 lg:right-20 w-full max-w-sm bg-white rounded-2xl shadow-2xl flex flex-col z-40 h-96 md:h-[500px]">
           {/* Header */}
           <div className="bg-linear-to-r from-lime-400 to-green-500 p-4 rounded-t-2xl flex items-center justify-between">
             <div>

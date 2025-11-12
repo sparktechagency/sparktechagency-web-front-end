@@ -34,7 +34,7 @@ export default function JobPositions() {
   }, [filteredJobs]);
 
   return (
-    <section className=" py-10 mt-20 bg-[#EEEEEE] rounded-t-[90px]">
+    <section className=" py-20 mt-5  bg-[#EEEEEE] rounded-t-[90px]">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-8">
