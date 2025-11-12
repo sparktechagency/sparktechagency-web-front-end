@@ -16,7 +16,7 @@
     @apply flex justify-center items-center;
   }
   .section-title {
-    @apply text-3xl lg:text-4xl 2xl:text-[40px] font-semibold text-foreground leading-[130%];
+    @apply text-3xl lg:text-[40px] 2xl:text-5xl font-semibold text-foreground leading-[130%];
   }
   .section-subtitle {
     @apply text-sm lg:text-[16px]  text-[#555555] max-w-[800px] mx-auto;

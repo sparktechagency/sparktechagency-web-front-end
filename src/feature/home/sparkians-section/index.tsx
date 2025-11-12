@@ -58,9 +58,9 @@ export function SparklansSection() {
   };
 
   return (
-    <section className="pb-24 pt-36 bg-spark">
+    <section className="pt-16 pb-16 lg:pb-24 lg:pt-36 bg-spark">
       <div className="container">
-        <div className="flex justify-between items-end">
+        <div className="flex flex-col md:flex-row justify-between items-end">
           <SparklansHeader />
 
           <SparklansNavigation
