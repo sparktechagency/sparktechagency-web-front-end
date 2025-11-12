@@ -3,7 +3,7 @@ import { BenefitCard } from "./BenefitCard";
 
 export function BenefitsSection() {
   return (
-    <section className="container py-20">
+    <section className="container pt-[100px] pb-20">
       {/* Header Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 items-center">
         {/* Left Column - Title */}

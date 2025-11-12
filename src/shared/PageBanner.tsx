@@ -29,7 +29,7 @@ export default function PageBanner({
 
   return (
     <section
-      className={`min-h-[70vh] 2xl:min-h-[70vh] ${
+      className={`min-h-[70vh] 2xl:min-h-[70vh]  ${
         isPrimary ? "bg-spark" : "bg-[#EFEDF0]"
       } flex flex-col justify-center items-center text-center rounded-b-[90px] relative overflow-hidden z-10`}
     >

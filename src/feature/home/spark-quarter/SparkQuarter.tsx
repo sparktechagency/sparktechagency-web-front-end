@@ -6,7 +6,7 @@ import items from "@/constants/quarter";
 
 
 
-const SliderSection = () => {
+const SparkQuarter = () => {
   const [index, setIndex] = useState(0);
 
   // Switch the slider every 4 seconds
@@ -27,4 +27,4 @@ const SliderSection = () => {
   );
 };
 
-export default SliderSection;
+export default SparkQuarter;
