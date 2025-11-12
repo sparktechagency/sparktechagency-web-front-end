@@ -33,7 +33,7 @@ const FAQ = ({ faqData }: FAQProps) => {
       <div className="max-w-4xl mx-auto ">
         <div className="flex flex-col items-center justify-center mb-16">
           <h2 className="text-primary text-[32px] font-semibold mb-2">FAQ</h2>
-          <h1 className=" section-title pb-2 text-white!">Have Questions?</h1>
+          <h1 className=" section-title  text-white!">Have Questions?</h1>
         </div>
 
         <div className=" grid grid-cols-1 gap-4 px-4">
