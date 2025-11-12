@@ -2,6 +2,9 @@ import PageBanner from "@/shared/PageBanner";
 import React from "react";
 import { BenefitsSection } from "./components/benefits/BenefitsSection";
 import JobPositions from "./components/JobPositions/JobPositions";
+import FAQ from "./components/FAQ";
+import { faqData } from "@/constants/faqData";
+import SparkQuarter from "../home/spark-quarter/SparkQuarter";
 
 export default function CareerPageMain() {
   return (
@@ -12,6 +15,8 @@ export default function CareerPageMain() {
       />
       <BenefitsSection />
       <JobPositions />
+      <FAQ faqData={faqData} />
+      <SparkQuarter />
     </section>
   );
 }
