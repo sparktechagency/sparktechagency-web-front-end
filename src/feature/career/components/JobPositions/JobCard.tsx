@@ -17,10 +17,8 @@ interface JobCardProps {
 export default function JobCard({ job }: JobCardProps) {
   return (
     <div className="bg-[#FDFDFD] rounded-2xl p-6    transition-shadow h-full flex flex-col">
-      {/* Department */}
+      {/* heading */}
       <p className="text-[#008000] leading-[150%] mb-2">{job.department}</p>
-
-      {/* Job Title */}
       <h3 className="text-[#000000] text-2xl font-semibold mb-7 max-w-[400px] h-full grow">
         {job.title}
       </h3>
@@ -39,7 +37,7 @@ export default function JobCard({ job }: JobCardProps) {
           </p>
         </div>
 
-        {/* Button */}
+        {/* Apply Button */}
         <Button
           type="primary"
           className="bg-black! text-white! shadow-none! h-12! rounded-full! w-[170px] text-base! "
