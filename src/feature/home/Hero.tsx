@@ -8,17 +8,16 @@ export default function Hero() {
       style={{
         backgroundImage: "url('/assets/hero/hero-bg.png')",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "16%",
         backgroundPosition: "center",
       }}
       id="banner"
-      className="relative w-full min-h-screen flex items-center justify-center px-4 py-20 "
+      className="relative w-full min-h-screen flex items-center justify-center px-4 py-20 lg:bg-size-[16%] bg-size-[60%] "
     >
       <div className=" container mx-auto text-center space-y-8">
         <div className="space-y-4">
-          <h1 className="text-5xl lg:text-7xl font-bold leading-tight max-w-[950px] mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight max-w-[950px] mx-auto">
             <span>Where Innovation Sparks </span>
-            <span className="text-5xl md:text-6xl font-bold text-primary ">
+            <span className="text-4xl md:text-5xl lg:text-7xl font-bold text-primary ">
               Digital Excellence
             </span>
           </h1>

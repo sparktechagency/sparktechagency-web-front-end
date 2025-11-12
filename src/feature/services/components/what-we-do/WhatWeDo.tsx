@@ -7,7 +7,7 @@ const WhatWeDoAnimation = dynamic(() => import("./WhatWeDoAnimation"));
 
 export default function WhatWeDo() {
   return (
-    <section className="container pt-20 ">
+    <section className="container pt-16 lg:pt-20 ">
       <div className="text-center ">
         <h1 className="section-title text-primary! mb-4">What We Do!</h1>
         <p className="section-subtitle">

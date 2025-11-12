@@ -6,7 +6,7 @@ interface QuarterTextProps {
 }
 export default function QuarterText({ name, quote }: QuarterTextProps) {
   return (
-    <div className="mb-12 max-w-[542px]">
+    <div className="h-[190px] md:h-auto lg:mb-12 max-w-[542px]">
       <p className="text-primary font-medium mb-3 text-3xl">{name}</p>
       <h2 className="section-title  lg:text-[48px]! mb-2.5">
         Spark of the Quater

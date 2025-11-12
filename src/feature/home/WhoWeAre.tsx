@@ -19,21 +19,21 @@ const WhoWeAre = () => {
   };
   return (
     <div className=" min-h-screen w-full bg-linear-to-b from-[#041504] to-[#09320A]">
-      <div className="container pt-[140px] pb-[73px]">
-        <div className=" flex items-start justify-between">
+      <div className="container pt-20 pb-16 lg:pt-[140px] lg:pb-[73px]">
+        <div className=" flex flex-col md:flex-row items-start justify-between gap-6">
           <div>
             <p className="text-[32px] font-semibold text-primary pb-6 ">
               {" "}
               Sparktech{" "}
             </p>
-            <p className=" text-[48px] font-bold text-[#FDFDFD] ">
+            <p className=" section-title font-bold! text-[#FDFDFD]! ">
               {" "}
               Who We Are?{" "}
             </p>
           </div>
 
           <div className=" space-y-6">
-            <p className=" text-[#D1D1D1] font-normal text-xl max-w-xl">
+            <p className=" text-[#D1D1D1] font-normal lg:text-xl max-w-xl">
               We are a team of passionate creatives, skilled engineers, and
               strategic thinkers united by a shared mission to craft digital
               experiences
@@ -56,7 +56,7 @@ const WhoWeAre = () => {
               <div className="absolute inset-0">
                 <video
                   ref={videoRef}
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-full lg:h-[500px] object-cover"
                   autoPlay
                   loop
                   muted

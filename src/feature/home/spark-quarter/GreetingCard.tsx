@@ -31,8 +31,8 @@ const GreetingCard = ({ items, setIndex, index }: any) => {
           key={item.id}
           className={`rounded-xl relative ${
             index === i
-              ? " md:w-[509px] h-[500px] -mx-12"
-              : "w-[50px] md:w-[113px]   h-[500px]"
+              ? " w-[260px] lg:w-[430px] 2xl:w-[509px] h-[500px] -mx-4 lg:-mx-12"
+              : "w-10 lg:w-[90px] 2xl:w-[113px]   h-[500px]"
           } shrink-0 transition-all ease-in-out duration-500 origin-center`}
           onClick={() => setIndex(i)}
           ref={(el) => {
@@ -46,13 +46,6 @@ const GreetingCard = ({ items, setIndex, index }: any) => {
               index === i ? "cursor-default" : "cursor-pointer"
             }`}
           />
-          {/* {index === i && (
-            <div className="absolute flex w-full rounded-xl flex-col justify-end h-full top-0 p-3 space-y-2 overflow-hidden bg-linear-to-t from-gray-100/60 to-transparent">
-              <h1 className="text-2xl font-semibold">{item.name}</h1>
-              <h2 className="text-lg">{item.title}</h2>
-              <p className="leading-[120%]">{item.description}</p>
-            </div>
-          )} */}
         </div>
       ))}
     </div>
