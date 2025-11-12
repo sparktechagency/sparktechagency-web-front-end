@@ -21,7 +21,7 @@ export default function ChatBot() {
         setMessages((prev) => [
           ...prev,
           {
-            text: "Thanks for your message! How can I help you today?",
+            text: "This chatbot is under development. Stay tuned for updates!",
             sender: "bot",
           },
         ]);
