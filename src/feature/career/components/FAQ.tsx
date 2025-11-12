@@ -47,7 +47,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                   ) => (
                     <div
                       key={index}
-                      className="overflow-hidden border border-[#B6B6B6] transition-max-height duration-300 ease-in-out rounded-lg bg-transparent cursor-pointer relative lg:h-14 h-[65px] "
+                      className="overflow-hidden border border-[#B6B6B680] transition-max-height duration-300 ease-in-out rounded-lg bg-transparent cursor-pointer relative lg:h-14.5 h-[65px] "
                       onClick={() => toggleAccordion(index)}
                       style={{
                         minHeight:
@@ -72,10 +72,10 @@ const FAQ = ({ faqData }: FAQProps) => {
                           }`}
                         >
                           <p
-                            className={`lg:text-[18px] text-sm leading-6 font-medium   ${
+                            className={`lg:text-[16px] text-sm leading-6 font-normal   ${
                               openIndex === index
                                 ? " text-white  "
-                                : " text-white/90"
+                                : " text-white/80"
                             }`}
                           >
                             {faq?.question}

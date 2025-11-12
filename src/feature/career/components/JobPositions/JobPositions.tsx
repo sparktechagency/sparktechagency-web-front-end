@@ -49,7 +49,7 @@ export default function JobPositions() {
             onChange={setActiveTab}
             items={DEPARTMENTS.map((dept) => ({ key: dept, label: dept }))}
             className="job-positions-tabs mb-10"
-            tabBarStyle={{ borderBottom: "1px solid #929292" }}
+            tabBarStyle={{ borderBottom: "1px solid #bcbaba" }}
           />
         </div>
 
