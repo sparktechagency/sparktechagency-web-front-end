@@ -6,7 +6,7 @@ import BoostYourBusiness from "./why-us/BoostYourBusiness";
 import SuccessfulProject from "./successful-project/SuccessfulProject";
 import OurEvolution from "./our-evolution/OurEvolution";
 import SparkQuarter from "./spark-quarter/SparkQuarter";
-import { SparklansSection } from "./sparkians-section/SparklansSection";
+import { SparkiansSection } from "./sparkians-section/SparklansSection";
 
 export default function Homepage() {
   return (
@@ -24,7 +24,7 @@ export default function Homepage() {
         <BoostYourBusiness />
       </section>
       <SuccessfulProject />
-      <SparklansSection />
+      <SparkiansSection />
       <SparkQuarter />
       <OurEvolution />
     </main>
