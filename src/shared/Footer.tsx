@@ -29,7 +29,7 @@ const Footer = () => {
         <Image src="/spark.png" width={1300} height={245} alt="logo" />
       </div>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="flex flex-col items-start lg:text-center md:text-left ">
+        <div className="flex flex-col items-start  md:text-left ">
           <Image
             src="/fullLogo.png"
             width={125}
@@ -109,7 +109,7 @@ const Footer = () => {
         <Upbutton />
       </div>
 
-      <div className="flex items-center  justify-center  py-3 border-t-2 border-[#868686] container mx-auto">
+      <div className="flex items-center  justify-center  py-3 border-t-2 border-[#92929240] container mx-auto">
         <p className="text-[#B3B8B5] text-[8px] lg:text-sm mb-0 ">
           © Copyright 2025 Sparktech agency All Rights Reserved. | Powered
           by Sparktech
