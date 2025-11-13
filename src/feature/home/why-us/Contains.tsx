@@ -21,21 +21,18 @@ const Contains = () => {
             {BoostBusinessData?.map((item, index) => {
               return (
                 <div
-                  className="flex flex-col items-start  p-3 rounded-xl  bg-[#F5FAEC]/8 backdrop-blur-xs shadow-lg border border-[#F5FAEC]/20 w-fit mx-auto"
+                  className="flex flex-col items-start  p-3 rounded-xl  bg-[#F5FAEC]/8 backdrop-blur-xs shadow-lg border border-[#F5FAEC]/20 w-fit mx-auto h-full"
                   key={index}
                 >
                   <p className="text-3xl text-primary pb-2">{item.icon}</p>
-                  <p className="text-lg font-medium text-primary pb-1">
-                    {" "}
-                    {item.title}{" "}
+                  <p className="lg:text-lg font-medium text-primary pb-1">
+                    {item.title}
                   </p>
-                  <p className="text-2xl font-semibold text-primary pb-3">
-                    {" "}
-                    {item.value}{" "}
+                  <p className="text-xl lg:text-2xl font-semibold text-primary pb-3 h-full grow">
+                    {item.value}
                   </p>
-                  <p className="text-sm font-normal text-[#D1D1D1]  ">
-                    {" "}
-                    {item.description}{" "}
+                  <p className="text-xs lg:text-sm font-normal text-[#D1D1D1]  ">
+                    {item.description}
                   </p>
                 </div>
               );

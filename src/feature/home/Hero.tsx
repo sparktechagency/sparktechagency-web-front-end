@@ -70,7 +70,7 @@ export default function Hero() {
                 />
               ))}
             </div>
-            <p className="text-sm font-semibold text-slate-700">
+            <p className="text-xs lg:text-sm font-semibold text-[#121212] text-nowrap">
               125k+ Customer
             </p>
           </div>

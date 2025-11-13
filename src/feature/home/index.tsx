@@ -4,9 +4,9 @@ import WhatWeDoSection from "./what-we-do/WhatWeDoSection";
 import WhoWeAre from "./WhoWeAre";
 import BoostYourBusiness from "./why-us/BoostYourBusiness";
 import SuccessfulProject from "./successful-project/SuccessfulProject";
-import { SparklansSection } from "./sparkians-section";
 import OurEvolution from "./our-evolution/OurEvolution";
 import SparkQuarter from "./spark-quarter/SparkQuarter";
+import { SparklansSection } from "./sparkians-section/SparklansSection";
 
 export default function Homepage() {
   return (

@@ -84,7 +84,7 @@ const NotFoundPage = () => {
             </div>
 
             {/* Right Side - Illustration */}
-            <div className="w-full md:w-1/2 flex justify-center">
+            <div className="w-full md:w-1/2 lg:flex justify-center hidden ">
               <div className="relative">
                 {/* Animated Illustration */}
                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-100/50 border border-green-200/30 flex items-center justify-center relative overflow-hidden">
