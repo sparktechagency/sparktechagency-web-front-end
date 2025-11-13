@@ -24,7 +24,7 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
   const isImageRight = index % 2 === 0;
 
   return (
-    <section id={sectionId} className="container lg:h-[550px]  overflow-hidden">
+    <section id={sectionId} className=" lg:h-[550px]  overflow-hidden">
       <div
         className={`flex flex-col-reverse md:flex-row items-center justify-center gap-12 lg:gap-28 ${
           isImageRight ? "md:flex-row-reverse" : ""

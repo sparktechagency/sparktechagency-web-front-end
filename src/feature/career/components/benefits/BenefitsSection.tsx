@@ -3,12 +3,12 @@ import { BenefitCard } from "./BenefitCard";
 
 export function BenefitsSection() {
   return (
-    <section className="container pt-[100px] pb-20">
+    <section className="container pt-16 lg:pt-[100px] pb-16 lg:pb-20">
       {/* Header Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 items-center">
         {/* Left Column - Title */}
         <div className="lg:col-span-2">
-          <span className="inline-block text-primary font-semibold text-[32px] mb-2 tracking-wide">
+          <span className="inline-block text-primary font-semibold text-2xl lg:text-[32px] mb-2 tracking-wide">
             Benefits
           </span>
           <h2 className="section-title">Our Competitive Advantage</h2>
@@ -25,7 +25,7 @@ export function BenefitsSection() {
       </div>
 
       {/* Benefits Grid */}
-      <div className="flex flex-wrap  gap-4">
+      <div className="flex flex-wrap  gap-2 lg:gap-4">
         {benefitsData?.map((benefit) => (
           <BenefitCard key={benefit.id} benefit={benefit} />
         ))}

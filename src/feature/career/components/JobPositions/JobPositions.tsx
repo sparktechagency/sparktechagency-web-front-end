@@ -34,14 +34,14 @@ export default function JobPositions() {
   }, [filteredJobs]);
 
   return (
-    <section className=" py-20 mt-5  bg-[#EEEEEE] rounded-t-[90px]">
+    <section className=" py-16 lg:py-20 mt-5  bg-[#EEEEEE] rounded-t-[30px] lg:rounded-t-[90px]">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-8">
           <p className="text-primary font-semibold text-[32px] mb-2 tracking-wide uppercase">
             Openings
           </p>
-          <h1 className="section-title mb-16">Open Job Positions</h1>
+          <h1 className="section-title mb-12 lg:mb-16">Open Job Positions</h1>
 
           {/* Tabs */}
           <Tabs
@@ -54,7 +54,7 @@ export default function JobPositions() {
         </div>
 
         {/* Job Grid */}
-        <div className="space-y-5">
+        <div className="space-y-5 min-h-[600px]">
           {jobsByRow?.map((row, rowIndex) => (
             <div
               key={rowIndex}

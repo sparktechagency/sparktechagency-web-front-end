@@ -65,14 +65,14 @@ const FAQ = ({ faqData }: FAQProps) => {
                         className="accordion-content "
                       >
                         <div
-                          className={`flex items-center justify-between px-5  ${
+                          className={`grid grid-cols-12 items-center lg:flex lg:justify-between px-5  ${
                             openIndex === index
                               ? " bg-primary h-14 text-white "
                               : " bg-transparent h-14"
                           }`}
                         >
                           <p
-                            className={`lg:text-[16px] text-sm leading-6 font-normal   ${
+                            className={`col-span-10  lg:text-[16px] text-sm leading-6 font-normal   ${
                               openIndex === index
                                 ? " text-white  "
                                 : " text-white/80"
@@ -81,7 +81,7 @@ const FAQ = ({ faqData }: FAQProps) => {
                             {faq?.question}
                           </p>
                           <p
-                            className={` rounded-full h-10 w-10 flex-center transition-all  ${
+                            className={` col-span-2 inline-flex rounded-full h-10 w-10 flex-center transition-all  ${
                               openIndex === index
                                 ? " bg-transparent border border-white"
                                 : "bg-primary"
