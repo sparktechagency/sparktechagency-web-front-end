@@ -10,7 +10,7 @@ import { SparklansNavigation } from "./SparklansNavigation";
 import { TeamMemberCard } from "./TeamMemberCard";
 import { TEAM_MEMBERS, TeamMember } from "@/constants/sparkians";
 
-export function SparklansSection() {
+export function SparkiansSection() {
   const swiperRef = useRef<any>(null);
   const videoRefs = useRef<{ [key: string]: HTMLVideoElement }>({});
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);

@@ -4,7 +4,7 @@ import { OurEvolutionData } from "@/constants/home-data";
 
 const OurEvolution = () => {
   return (
-    <div className="pb-16 lg:pb-[100px] container mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-10">
+    <div className="py-16 lg:pb-20 container mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-10">
       {/* Left side */}
       <div className="flex-1 ">
         <p className="text-2xl lg:text-[32px] text-[#8BC53F] font-semibold pb-2">

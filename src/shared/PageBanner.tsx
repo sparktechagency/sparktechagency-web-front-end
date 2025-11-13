@@ -58,7 +58,7 @@ export default function PageBanner({
           />
 
           {/* Black gradient overlay */}
-          <div className="absolute bottom-0 left-0 w-full h-56 pointer-events-none -z-10 bg-linear-to-t from-[#041504] to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-56 pointer-events-none z-10 bg-linear-to-t from-[#041504] to-transparent"></div>
         </>
       )}
     </section>
