@@ -35,8 +35,9 @@ export function TeamMemberCard({
       <video
         ref={onVideoRef}
         src={member.video}
+
         className={`w-full h-80 lg:h-[430px] object-cover object-top transition-opacity duration-300 ${
-          isPlaying ? "opacity-100" : "opacity-0 absolute"
+          isPlaying ? "opacity-100" : "opacity-0 hidden absolute"
         }`}
         autoPlay={isPlaying}
         onEnded={onVideoEnd}
