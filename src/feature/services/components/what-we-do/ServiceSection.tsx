@@ -4,7 +4,9 @@ import { ServiceContent } from "./ServiceContent";
 import dynamic from "next/dynamic";
 import type { ServiceSection as ServiceSectionType } from "@/constants/servicesData";
 
-const ServiceSectionAnimation = dynamic(() => import("./ServiceSectionAnimation"));
+const ServiceSectionAnimation = dynamic(
+  () => import("./ServiceSectionAnimation")
+);
 
 interface ServiceSectionProps {
   service: ServiceSectionType;
@@ -22,13 +24,13 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
   const isImageRight = index % 2 === 0;
 
   return (
-    <section id={sectionId} className="container h-[550px]  overflow-hidden">
+    <section id={sectionId} className="container lg:h-[550px]  overflow-hidden">
       <div
-        className={`flex flex-col md:flex-row items-center justify-center gap-28 ${
+        className={`flex flex-col-reverse md:flex-row items-center justify-center gap-12 lg:gap-28 ${
           isImageRight ? "md:flex-row-reverse" : ""
         }`}
       >
-        <div id={imageId} className="w-full md:w-1/2">
+        <div id={imageId} className="w-full md:w-1/2 ">
           <ImageCarousel images={service.images} />
         </div>
 
@@ -47,7 +49,7 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
         imageId={imageId}
         contentId={contentId}
         isImageRight={isImageRight}
-        markers={false} 
+        markers={false}
       />
     </section>
   );

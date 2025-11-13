@@ -29,19 +29,19 @@ export default function PageBanner({
 
   return (
     <section
-      className={`min-h-[70vh] 2xl:min-h-[70vh]  ${
+      className={`min-h-[70vh] 2xl:min-h-[70vh] px-4  ${
         isPrimary ? "bg-spark" : "bg-[#EFEDF0]"
-      } flex flex-col justify-center items-center text-center rounded-b-[90px] relative overflow-hidden z-10`}
+      } flex flex-col justify-center items-center text-center rounded-b-none lg:rounded-b-[90px] relative overflow-hidden z-10`}
     >
       <div className="z-10 bg-transparent">
         <h1
           className={`${
             isPrimary ? "text-[#FDFDFD]" : "text-[#121212]"
-          } font-semibold text-5xl 2xl:text-[64px] mb-6`}
+          } font-semibold text-4xl md:text-5xl 2xl:text-[64px] mb-6`}
         >
           {title}
         </h1>
-        <p className="text-[#999999] leading-[150%] max-w-[880px]">
+        <p className="text-[#999999] leading-[150%] max-w-[880px] text-sm lg:text-base">
           {subtitle}
         </p>
       </div>

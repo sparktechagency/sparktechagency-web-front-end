@@ -25,17 +25,17 @@ const socialMedias = [
 const Footer = () => {
   return (
     <footer className="bg-linear-to-b from-[#09320A] to-[#041504] ">
-      <div className=" flex-center container w-full pb-24">
+      <div className=" flex-center container w-full pb-12 lg:pb-24">
         <Image src="/spark.png" width={1300} height={245} alt="logo" />
       </div>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="flex flex-col items-center md:items-start text-center md:text-left ">
+        <div className="flex flex-col items-start lg:text-center md:text-left ">
           <Image
             src="/fullLogo.png"
             width={125}
             height={44}
             alt="logo"
-            className=" pb-6 object-cover"
+            className=" pb-6 object-cover w-[140px]"
           />
           <p className=" max-w-[355px] text-[#F1F1F1] tracking-wide">
             An Experience Design Agency focusing on building functional, simple,

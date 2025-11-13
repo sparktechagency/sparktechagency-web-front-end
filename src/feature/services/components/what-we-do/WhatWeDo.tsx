@@ -7,7 +7,7 @@ const WhatWeDoAnimation = dynamic(() => import("./WhatWeDoAnimation"));
 
 export default function WhatWeDo() {
   return (
-    <section className="container pt-16 lg:pt-20 ">
+    <section className="container pb-16 lg:pb-0 pt-16 lg:pt-20 ">
       <div className="text-center ">
         <h1 className="section-title text-primary! mb-4">What We Do!</h1>
         <p className="section-subtitle">
@@ -16,7 +16,7 @@ export default function WhatWeDo() {
         </p>
       </div>
 
-      <div className=" pt-16">
+      <div className=" pt-16 space-y-6 lg:space-y-0">
         {servicesData?.map((service, index) => (
           <div key={service.id} className="service-card">
             <ServiceSection service={service} index={index} />

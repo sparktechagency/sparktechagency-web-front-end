@@ -83,7 +83,7 @@ export default function Navbar() {
     >
       <div className="w-full lg:w-fit lg:mx-auto px-4 lg:px-8 py-4 transition-colors duration-300 bg-[#041904] lg:rounded-full inner-shadow-white h-16 flex items-center justify-center lg:mt-4">
         <div className="flex items-center justify-between lg:justify-center w-full lg:w-auto ">
-          <Link href="/home" className="flex items-center lg:hidden">
+          <Link href="/" className="flex items-center lg:hidden">
             <Image
               src="/fullLogo.png"
               alt="Logo"
