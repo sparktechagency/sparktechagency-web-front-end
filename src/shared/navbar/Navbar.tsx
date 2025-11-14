@@ -103,7 +103,8 @@ export default function Navbar() {
 
               if (isLogoItem && index === middleIndex) {
                 return (
-                  <div
+                  <Link
+                    href={"/"}
                     key={index}
                     className="flex items-center justify-center scale-[1.15] origin-center"
                   >
@@ -115,7 +116,7 @@ export default function Navbar() {
                       alt="Sparktech Logo"
                       className="h-16 w-auto p-1.5 bg-[#080808] rounded-full inner-shadow-white"
                     />
-                  </div>
+                  </Link>
                 );
               }
 
