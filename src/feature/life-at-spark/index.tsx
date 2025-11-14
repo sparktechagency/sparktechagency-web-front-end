@@ -2,6 +2,7 @@ import PageBanner from "@/shared/PageBanner";
 import React from "react";
 import StatsSection from "./components/StatsSection";
 import PhotoAlbum from "./components/PhotoAlbum";
+import DomeGallery from "@/ui/DomeGallery";
 
 export default function LifeAtSpark() {
   return (
@@ -12,6 +13,9 @@ export default function LifeAtSpark() {
         children={<StatsSection />}
       />
       <PhotoAlbum />
+      <section className="min-h-screen my-20">
+        <DomeGallery />
+      </section>
     </section>
   );
 }
