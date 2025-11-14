@@ -17,7 +17,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "3",
     name: "Fahim",
-    title: "ELF Member",
+    title: "LF Member",
     thumbnail: "/assets/thumbnails/fahim.png",
     video: "https://res.cloudinary.com/ds1njqypu/video/upload/v1762255314/Download_3_xjddcb.mp4",
   },

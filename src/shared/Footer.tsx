@@ -43,7 +43,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex flex-col items-center md:items-start mt-5 md:mt-0 text-[#F1F1F1]">
+        <div className="flex flex-col items-center md:items-start mt-5 md:mt-0 text-[#F1F1F1] ">
           <div className="space-y-4">
             <p className="text-xl font-medium  mb-6 "> For Contact</p>
             <p className="text-base flex items-center gap-2 ">
