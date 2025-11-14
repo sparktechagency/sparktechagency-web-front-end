@@ -16,18 +16,25 @@ const useMedia = (
   values: number[],
   defaultValue: number
 ): number => {
-  const get = () =>
-    values[queries.findIndex((q) => matchMedia(q).matches)] ?? defaultValue;
+  const get = () => {
+    if (typeof window === "undefined") return defaultValue; // SSR fallback
+    return (
+      values[queries.findIndex((q) => window.matchMedia(q).matches)] ??
+      defaultValue
+    );
+  };
 
   const [value, setValue] = useState<number>(get);
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // SSR safety
+
     const handler = () => setValue(get);
-    queries.forEach((q) => matchMedia(q).addEventListener("change", handler));
+    const mqls = queries.map((q) => window.matchMedia(q));
+    mqls.forEach((mql) => mql.addEventListener("change", handler));
+
     return () =>
-      queries.forEach((q) =>
-        matchMedia(q).removeEventListener("change", handler)
-      );
+      mqls.forEach((mql) => mql.removeEventListener("change", handler));
   }, [queries]);
 
   return value;
@@ -220,28 +227,28 @@ const Masonry: React.FC<MasonryProps> = ({
   }, [grid]);
 
   // scroll animation
-//   useLayoutEffect(() => {
-//     if (!imagesReady) return;
+  //   useLayoutEffect(() => {
+  //     if (!imagesReady) return;
 
-//     grid.forEach((item) => {
-//       gsap.fromTo(
-//         `[data-key="${item.id}"]`,
-//         { opacity: 0, y: 40 },
-//         {
-//           opacity: 1,
-//           y: item.y,
-//           duration: 0.6,
-//           ease: "power2.out",
-//           scrollTrigger: {
-//             trigger: `[data-key="${item.id}"]`,
-//             start: "top 90%",
-//             toggleActions: "play none none reverse",
-//           },
-//           immediateRender: false,
-//         }
-//       );
-//     });
-//   }, [grid, imagesReady]);
+  //     grid.forEach((item) => {
+  //       gsap.fromTo(
+  //         `[data-key="${item.id}"]`,
+  //         { opacity: 0, y: 40 },
+  //         {
+  //           opacity: 1,
+  //           y: item.y,
+  //           duration: 0.6,
+  //           ease: "power2.out",
+  //           scrollTrigger: {
+  //             trigger: `[data-key="${item.id}"]`,
+  //             start: "top 90%",
+  //             toggleActions: "play none none reverse",
+  //           },
+  //           immediateRender: false,
+  //         }
+  //       );
+  //     });
+  //   }, [grid, imagesReady]);
 
   const handleMouseEnter = (id: string, element: HTMLElement) => {
     if (scaleOnHover) {
