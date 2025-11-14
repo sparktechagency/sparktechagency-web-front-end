@@ -25,7 +25,7 @@ export default function WhoWeAre() {
 
         <div className="">
           <Image
-            src="/assets/company/img1.png"
+            src="/assets/company/our-story/img1.png"
             alt="Company"
             className="w-full h-full object-contain"
             width={500}
