@@ -37,7 +37,7 @@ type ItemDef = {
 const DEFAULTS = {
   maxVerticalRotationDeg: 0,
   dragSensitivity: 20,
-  enlargeTransitionMs: 400,
+  enlargeTransitionMs: 300,
   segments: 35,
 };
 
@@ -966,12 +966,12 @@ export default function DomeGallery({
 
           <div
             ref={viewerRef}
-            className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center"
+            className=" absolute inset-0 z-20 pointer-events-none flex items-center justify-center "
             style={{ padding: "var(--viewer-pad)" }}
           >
             <div
               ref={scrimRef}
-              className="scrim absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-500"
+              className="scrim absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-500 "
               style={{
                 background: "rgba(0, 0, 0, 0.4)",
                 backdropFilter: "blur(3px)",
@@ -979,7 +979,7 @@ export default function DomeGallery({
             />
             <div
               ref={frameRef}
-              className="viewer-frame h-full aspect-square flex"
+              className="viewer-frame h-full aspect-square flex "
               style={{
                 borderRadius: `var(--enlarge-radius, ${openedImageBorderRadius})`,
               }}

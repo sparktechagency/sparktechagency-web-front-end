@@ -2,7 +2,7 @@ import PageBanner from "@/shared/PageBanner";
 import React from "react";
 import StatsSection from "./components/StatsSection";
 import PhotoAlbum from "./components/PhotoAlbum";
-import DomeGallery from "@/ui/DomeGallery";
+import DomeGallery from "@/feature/life-at-spark/components/DomeGallery";
 
 export default function LifeAtSpark() {
   return (
