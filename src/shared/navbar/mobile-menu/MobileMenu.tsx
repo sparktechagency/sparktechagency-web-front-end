@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import navItems from "@/constants/navItem";
-import OutlineButton from "./OutlineButton";
 
 interface MobileMenuProps {
   open: boolean;
@@ -104,7 +103,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose }) => {
       }`}
     >
       <div className="flex flex-col p-5">
-        <nav className="space-y-2">{navItems.map(renderMenuItem)}</nav>
+        <nav className="space-y-2">
+          {navItems
+            .filter((item) => item.labelKey !== "Sparktech")
+            .map((item) => renderMenuItem(item))}
+        </nav>
       </div>
     </div>
   );
