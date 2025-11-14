@@ -7,12 +7,14 @@ interface serviceBannerProps {
   isPrimary?: boolean;
   title: string;
   subtitle: string;
+  children?: React.ReactNode;
 }
 
 export default function PageBanner({
   isPrimary = false,
   title,
   subtitle,
+  children = null,
 }: serviceBannerProps) {
   const imgRef = useRef<HTMLImageElement | null>(null);
 
@@ -31,7 +33,7 @@ export default function PageBanner({
     <section
       className={`min-h-[70vh] 2xl:min-h-[70vh] px-4  ${
         isPrimary ? "bg-spark" : "bg-[#EFEDF0]"
-      } flex flex-col justify-center items-center text-center   lg:rounded-b-[90px]  relative overflow-hidden z-10`}
+      } flex flex-col justify-center ${children? "lg:pt-16" :"pt-0"} items-center  text-center   lg:rounded-b-[90px]  relative overflow-hidden z-10`}
     >
       <div className="z-10 bg-transparent">
         <h1
@@ -44,6 +46,7 @@ export default function PageBanner({
         <p className="text-[#999999] leading-[150%] max-w-[880px] text-sm lg:text-base">
           {subtitle}
         </p>
+        {children && <div className="mt-12 2xl:mt-[60px]">{children}</div>}
       </div>
 
       {isPrimary && (
