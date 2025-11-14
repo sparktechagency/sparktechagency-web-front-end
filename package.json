@@ -10,6 +10,7 @@
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.2.0",
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
+    "@use-gesture/react": "^10.3.1",
     "antd": "^5.28.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.553.0",

@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import AntProvider from "@/lib/context/AntProvider";
 import { Toaster } from "sonner";
-// import dynamic from 'next/dynamic' 
+// import dynamic from 'next/dynamic'
 
 // const SmoothScrollProvider = dynamic(
 //   () => import('@/ui/SmoothScrollProvider')
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "A Betopia Company",
   icons: {
     icon: "/favicon.png",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +33,7 @@ export default function RootLayout({
         <body className={`${poppins.variable}  antialiased`}>
           <Toaster position="top-center" duration={2000} />
           {/* <SmoothScrollProvider>  */}
-            {children}
+          {children}
           {/* </SmoothScrollProvider> */}
         </body>
       </html>
