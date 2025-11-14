@@ -13,7 +13,7 @@ export default function LifeAtSpark() {
         children={<StatsSection />}
       />
       <PhotoAlbum />
-      <section className="min-h-screen my-20">
+      <section className="lg:min-h-screen py-20">
         <DomeGallery />
       </section>
     </section>

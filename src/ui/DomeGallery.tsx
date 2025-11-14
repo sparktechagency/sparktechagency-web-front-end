@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useMemo, useRef, useCallback } from "react";
 import { useGesture } from "@use-gesture/react";
-
-type ImageItem = string | { src: string; alt?: string };
+import DEFAULT_IMAGES, {
+  ImageItem,
+} from "@/constants/life-at-spark/employeeGallery";
 
 type DomeGalleryProps = {
   images?: ImageItem[];
@@ -32,41 +33,6 @@ type ItemDef = {
   sizeX: number;
   sizeY: number;
 };
-
-const DEFAULT_IMAGES: ImageItem[] = [
-  {
-    src: "https://i.ibb.co.com/FqzSsdfj/580512431-4116207195308135-3270780407261229590-n.jpg",
-    alt: "Abstract art",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1755331039789-7e5680e26e8f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Abstract art",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1755569309049-98410b94f66d?q=80&w=772&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Modern sculpture",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1755497595318-7e5e3523854f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Digital artwork",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1755353985163-c2a0fe5ac3d8?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Contemporary art",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1745965976680-d00be7dc0377?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Geometric pattern",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1752588975228-21f44630bb3c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Textured surface",
-  },
-  {
-    src: "https://pbs.twimg.com/media/Gyla7NnXMAAXSo_?format=jpg&name=large",
-    alt: "Social media image",
-  },
-];
 
 const DEFAULTS = {
   maxVerticalRotationDeg: 0,
@@ -137,6 +103,8 @@ function buildItems(pool: ImageItem[], seg: number): ItemDef[] {
     ...c,
     src: usedImages[i].src,
     alt: usedImages[i].alt,
+    name: (pool[i % pool.length] as any).name ?? "",
+    designation: (pool[i % pool.length] as any).designation ?? "",
   }));
 }
 
@@ -689,6 +657,31 @@ export default function DomeGallery({
     const img = document.createElement("img");
     img.src = rawSrc;
     img.alt = rawAlt;
+    const name = parent.dataset.name || "";
+    const designation = parent.dataset.designation || "";
+
+    // Info container
+    const info = document.createElement("div");
+    info.style.cssText = `
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  z-index: 20;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+`;
+
+    info.innerHTML = `
+  <div>${name}</div>
+  <div style="font-size:14px; font-weight:400; opacity:.85">${designation}</div>
+`;
+
+    overlay.appendChild(info);
+
     img.style.cssText = `width:100%; height:100%; object-fit:cover; filter:${
       grayscale ? "grayscale(1)" : "none"
     };`;
@@ -849,7 +842,7 @@ export default function DomeGallery({
       <style dangerouslySetInnerHTML={{ __html: cssStyles }} />
       <div
         ref={rootRef}
-        className="sphere-root relative w-full h-full min-h-screen "
+        className="sphere-root relative w-full h-full min-h-[80vh] lg:min-h-screen "
         style={
           {
             ["--segments-x" as any]: segments,
@@ -877,6 +870,8 @@ export default function DomeGallery({
                   className="sphere-item absolute m-auto"
                   data-src={it.src}
                   data-alt={it.alt}
+                  data-name={(it as any).name}
+                  data-designation={(it as any).designation}
                   data-offset-x={it.x}
                   data-offset-y={it.y}
                   data-size-x={it.sizeX}
