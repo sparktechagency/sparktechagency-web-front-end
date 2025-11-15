@@ -4,7 +4,7 @@ import { BenefitsSection } from "./components/benefits/BenefitsSection";
 import JobPositions from "./components/JobPositions/JobPositions";
 import FAQ from "./components/FAQ";
 import { faqData } from "@/constants/faqData";
-import SparkQuarter from "../home/spark-quarter/SparkQuarter";
+import SparkQuarter from "../home/components/spark-quarter/SparkQuarter";
 
 export default function CareerPageMain() {
   return (
