@@ -4,11 +4,13 @@ interface BenefitCardProps {
 
 export function BenefitCard({ benefit }: BenefitCardProps) {
   return (
-    <div className="flex items-center gap-3 px-4 lg:px-6 py-3.5 bg-spark rounded-full hover:bg-[#0f3622] transition-colors duration-200 cursor-pointer">
-       {benefit?.icon}
-      <span className="text-white/90 font-medium text-[10px] lg:text-sm whitespace-nowrap">
-        {benefit?.label}
-      </span>
+    <div className="bg-spark rounded-full cursor-pointer  hover:bg-[#0f3622] transition-colors duration-200 py-3.5 lg:py-4.5 ps-[25px] pe-8 lg:ps-[30px] lg:pe-[38px] ">
+      <div className="flex items-center gap-x-2">
+        {benefit?.icon}
+        <span className="text-white/90 font-medium text-sm whitespace-nowrap">
+          {benefit?.label}
+        </span>
+      </div>
     </div>
   );
 }

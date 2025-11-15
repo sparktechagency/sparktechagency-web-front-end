@@ -1,4 +1,3 @@
-import company from "@/app/(website)/company/page";
 
 export const owners = [
   {

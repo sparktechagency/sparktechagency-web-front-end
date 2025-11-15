@@ -10,7 +10,9 @@ const CompanyPage = () => {
       <div className=" pt-16 lg:pt-[100px]">
         <Owner />
         <SparkiansSection />
-        <OurEvolution />
+        <div className=" pt-0 lg:pt-[100px]">
+          <OurEvolution />
+        </div>
       </div>
     </section>
   );

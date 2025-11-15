@@ -38,13 +38,9 @@ const WhoWeAre = () => {
               strategic thinkers united by a shared mission to craft digital
               experiences
             </p>
-            <button className=" flex items-center justify-center text-primary font-medium border border-primary py-4 px-6 rounded-full gap-1">
-              {" "}
-              <span> View More </span>{" "}
-              <span>
-                {" "}
-                <GoArrowRight size={24} />{" "}
-              </span>
+            <button className=" flex items-center justify-center text-primary font-medium border border-primary py-4 px-6 rounded-full gap-1 hover:bg-primary hover:text-white transition-all duration-300">
+              <span> View More </span>
+              <span><GoArrowRight size={24} /></span>
             </button>
           </div>
         </div>

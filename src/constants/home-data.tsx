@@ -1,8 +1,8 @@
 import { PiHandshake, PiUsersThreeDuotone } from "react-icons/pi";
 import { FaLaptopCode, FaSmile } from "react-icons/fa";
-import { FaCode, FaAward } from "react-icons/fa6";
+import {FaAward } from "react-icons/fa6";
 import { GiGlobe } from "react-icons/gi";
-import { BrainCircuit, ChartColumnBig, Handshake } from "lucide-react";
+import { BrainCircuit, ChartColumnBig } from "lucide-react";
 
 const members = [
   { name: "Sarah Lee", img: "/assets/hero/members/user.jpg" },
@@ -72,7 +72,7 @@ const OurEvolutionData = [
   {
     color: "#6D8F2B",
     children: (
-      <div>
+      <div >
         <p className="text-xl font-semibold text-[#6D8F2B] mb-2">2023</p>
         <p className="text-[#606060] max-w-[500px] leading-relaxed text-[18px] ps-3">
           A vision sparked — and SparkTech Ltd. was born. <br />
