@@ -66,16 +66,16 @@ export default function JobCard({ job }: JobCardProps) {
         {job.title}
       </h3>
 
-      <div className="flex justify-between items-end">
+      <div className="flex flex-col md:flex-row justify-between md:items-end gap-4">
         {/* Job Details */}
-        <div className="space-y-2 text-sm text-[#606060]">
+        <div className="space-y-2 text-sm text-[#606060] grid grid-cols-2 md:grid-cols-1 gap-2">
           <p>
             <span className="font-medium">Vacancy:</span> {job.vacancy}
           </p>
           <p>
             <span className="font-medium">Onsite -</span> {job.type}
           </p>
-          <p>
+          <p className="col-span-2 md:col-auto">
             <span className="font-medium">Deadline:</span> {job.deadline}
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function JobCard({ job }: JobCardProps) {
         {/* Apply Button */}
         <Button
           type="primary"
-          className="!bg-black !text-white !shadow-none !h-12 !rounded-full !w-[170px] !text-[16px] flex items-center justify-center gap-1 transition-all duration-300 "
+          className="bg-black! text-white! shadow-none! h-10! lg:h-12! rounded-full! w-[170px]! text-[16px]! flex items-center justify-center gap-1 transition-all duration-300 "
         >
           Job Details
           <ArrowRight

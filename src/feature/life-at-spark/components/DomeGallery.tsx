@@ -4,6 +4,7 @@ import { useGesture } from "@use-gesture/react";
 import DEFAULT_IMAGES, {
   ImageItem,
 } from "@/constants/life-at-spark/employeeGallery";
+import Image from "next/image";
 
 type DomeGalleryProps = {
   images?: ImageItem[];
@@ -920,9 +921,12 @@ export default function DomeGallery({
                       backfaceVisibility: "hidden",
                     }}
                   >
-                    <img
+                    <Image
+                      height={950}
+                      width={1000}
                       src={it.src}
                       draggable={false}
+                      unoptimized
                       alt={it.alt}
                       className="w-full h-full object-cover pointer-events-none"
                       style={{

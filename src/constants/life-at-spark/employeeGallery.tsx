@@ -14,7 +14,7 @@ const DEFAULT_IMAGES: ImageItem[] = [
     src: "https://i.ibb.co.com/j9kDvByp/a8b7cc78680e6c336e639b5c1b5b02da9582bd74.jpg",
     alt: "Nadir",
     name: "Nadir Hossain",
-    designation: "UI/UX Designer",
+    designation: "Sr Backend Developer",
   },
   {
     src: "https://i.ibb.co.com/FqzSsdfj/580512431-4116207195308135-3270780407261229590-n.jpg",
