@@ -11,10 +11,16 @@ const DEFAULT_IMAGES: ImageItem[] = [
   },
 
   {
-    src: "https://i.ibb.co.com/j9kDvByp/a8b7cc78680e6c336e639b5c1b5b02da9582bd74.jpg",
+    src: "https://i.ibb.co.com/Ng62nrs1/inspiring-new-boss-copy1-768x1147-3-4.png",
     alt: "Nadir",
     name: "Nadir Hossain",
     designation: "Sr Backend Developer",
+  },
+  {
+    src: "https://i.ibb.co.com/Ps7z6hZ4/93995954-2667124773520254-2730501655723245568-n.jpg",
+    alt: "Masum",
+    name: "H. M. Masum",
+    designation: "Jr. Frontend Developer",
   },
   {
     src: "https://i.ibb.co.com/FqzSsdfj/580512431-4116207195308135-3270780407261229590-n.jpg",
@@ -53,11 +59,24 @@ const DEFAULT_IMAGES: ImageItem[] = [
     designation: "Pattern Designer",
   },
   {
-    src: "https://i.ibb.co.com/RTLhwdcY/Frame-2147238514-1.png",
-    alt: "Hasibul Hasan Shanto",
-    name: "Hasibul Hasan Shanto",
-    designation: "LF Member & Flutter Developer",
+    src: "https://i.ibb.co.com/FqzSsdfj/580512431-4116207195308135-3270780407261229590-n.jpg",
+    alt: "Abstract art",
+    name: "Asadur Rahaman Yead",
+    designation: "Jr Frontend Developer",
   },
+  // {
+  //   src: "https://i.ibb.co.com/RTLhwdcY/Frame-2147238514-1.png",
+  //   alt: "Hasibul Hasan Shanto",
+  //   name: "Hasibul Hasan Shanto",
+  //   designation: "LF Member & Flutter Developer",
+  // },
+  {
+    src: "https://i.ibb.co.com/N2C3qLwJ/476160446-2158314191270526-2862639120188139429-n.jpg",
+    alt: "Mostain",
+    name: "Mostain Billah",
+    designation: "Sr. UI/UX Designer",
+  },
+
   {
     src: "https://i.ibb.co.com/Hfhw6ggV/asad.png",
     alt: "Asaduzzaman Mahfuz",

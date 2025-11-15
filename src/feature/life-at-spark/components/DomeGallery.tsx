@@ -1,4 +1,5 @@
 "use client";
+import { gsap } from "gsap";
 import { useEffect, useMemo, useRef, useCallback } from "react";
 import { useGesture } from "@use-gesture/react";
 import DEFAULT_IMAGES, {
@@ -142,6 +143,14 @@ export default function DomeGallery({
   openedImageBorderRadius = "30px",
   grayscale = false,
 }: DomeGalleryProps) {
+  // Add this inside the component body
+  const autoRotateTimelineRef = useRef<gsap.core.Timeline | null>(null);
+  const idleTimeoutRef = useRef<number | null>(null);
+  const isUserInteractingRef = useRef(false);
+
+  // Auto-rotation speed (degrees per second)
+  const AUTO_ROTATE_SPEED = 8; // Adjust for faster/slower
+  const IDLE_DELAY_MS = 3000; // Wait 3 seconds after interaction
   const rootRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
   const sphereRef = useRef<HTMLDivElement>(null);
@@ -168,6 +177,73 @@ export default function DomeGallery({
   const openingRef = useRef(false);
   const openStartedAtRef = useRef(0);
   const lastDragEndAt = useRef(0);
+  const applyTransform = (xDeg: number, yDeg: number) => {
+    const el = sphereRef.current;
+    if (el) {
+      el.style.transform = `translateZ(calc(var(--radius) * -1)) rotateX(${xDeg}deg) rotateY(${yDeg}deg)`;
+    }
+  };
+  // Function to start auto-rotation
+  const startAutoRotation = useCallback(() => {
+    if (autoRotateTimelineRef.current) return;
+
+    const tl = gsap.timeline({ repeat: -1, ease: "none" });
+    tl.to(rotationRef.current, {
+      y: "+=360",
+      duration: 2500 / AUTO_ROTATE_SPEED,
+      onUpdate: () => {
+        const normalizedY = wrapAngleSigned(rotationRef.current.y);
+        rotationRef.current.y = normalizedY;
+        applyTransform(rotationRef.current.x, normalizedY);
+      },
+    });
+
+    autoRotateTimelineRef.current = tl;
+  }, [applyTransform]);
+  // Function to stop auto-rotation
+  const stopAutoRotation = useCallback(() => {
+    if (autoRotateTimelineRef.current) {
+      autoRotateTimelineRef.current.kill();
+      autoRotateTimelineRef.current = null;
+    }
+    if (idleTimeoutRef.current) {
+      window.clearTimeout(idleTimeoutRef.current);
+      idleTimeoutRef.current = null;
+    }
+  }, []);
+
+  // Reset idle timer and resume auto-rotation after delay
+  const resetIdleTimer = useCallback(() => {
+    isUserInteractingRef.current = true;
+    stopAutoRotation();
+
+    if (idleTimeoutRef.current) {
+      window.clearTimeout(idleTimeoutRef.current);
+    }
+
+    idleTimeoutRef.current = window.setTimeout(() => {
+      isUserInteractingRef.current = false;
+      startAutoRotation();
+    }, IDLE_DELAY_MS);
+  }, [stopAutoRotation, startAutoRotation]);
+
+  // Start auto-rotation on mount
+  useEffect(() => {
+    startAutoRotation();
+
+    return () => {
+      stopAutoRotation();
+    };
+  }, [startAutoRotation, stopAutoRotation]);
+
+  useEffect(() => {
+    startAutoRotation();
+
+    return () => {
+      stopAutoRotation();
+      if (idleTimeoutRef.current) clearTimeout(idleTimeoutRef.current);
+    };
+  }, [startAutoRotation, stopAutoRotation]);
 
   const scrollLockedRef = useRef(false);
   const lockScroll = useCallback(() => {
@@ -183,13 +259,6 @@ export default function DomeGallery({
   }, []);
 
   const items = useMemo(() => buildItems(images, segments), [images, segments]);
-
-  const applyTransform = (xDeg: number, yDeg: number) => {
-    const el = sphereRef.current;
-    if (el) {
-      el.style.transform = `translateZ(calc(var(--radius) * -1)) rotateX(${xDeg}deg) rotateY(${yDeg}deg)`;
-    }
-  };
 
   const lockedRadiusRef = useRef<number | null>(null);
 
@@ -305,17 +374,25 @@ export default function DomeGallery({
       const frictionMul = 0.94 + 0.055 * d;
       const stopThreshold = 0.015 - 0.01 * d;
       const maxFrames = Math.round(90 + 270 * d);
+
       const step = () => {
         vX *= frictionMul;
         vY *= frictionMul;
+
+        // ---- STOP CONDITION ----
         if (Math.abs(vX) < stopThreshold && Math.abs(vY) < stopThreshold) {
           inertiaRAF.current = null;
+
+          // NEW: tell the idle system that the user is idle again
+          resetIdleTimer();
           return;
         }
         if (++frames > maxFrames) {
           inertiaRAF.current = null;
+          resetIdleTimer(); // also when we force-stop after maxFrames
           return;
         }
+
         const nextX = clamp(
           rotationRef.current.x - vY / 200,
           -maxVerticalRotationDeg,
@@ -326,10 +403,11 @@ export default function DomeGallery({
         applyTransform(nextX, nextY);
         inertiaRAF.current = requestAnimationFrame(step);
       };
+
       stopInertia();
       inertiaRAF.current = requestAnimationFrame(step);
     },
-    [dragDampening, maxVerticalRotationDeg, stopInertia]
+    [dragDampening, maxVerticalRotationDeg, stopInertia, resetIdleTimer] // <-- add resetIdleTimer to deps
   );
 
   useGesture(
@@ -351,6 +429,7 @@ export default function DomeGallery({
           ".item__image"
         ) as HTMLElement | null;
         tapTargetRef.current = potential || null;
+        resetIdleTimer();
       },
       onDrag: ({
         event,
@@ -359,6 +438,7 @@ export default function DomeGallery({
         direction: dirArr = [0, 0],
         movement,
       }: any) => {
+        // === Your existing onDrag code ===
         if (
           focusedElRef.current ||
           !draggingRef.current ||
@@ -391,6 +471,7 @@ export default function DomeGallery({
         }
 
         if (last) {
+          // === Your existing last-drag logic ===
           draggingRef.current = false;
           let isTap = false;
 
@@ -436,6 +517,11 @@ export default function DomeGallery({
           if (pointerTypeRef.current === "touch") unlockScroll();
           if (movedRef.current) lastDragEndAt.current = performance.now();
           movedRef.current = false;
+
+          // === NEW: Resume auto-rotation after drag ends ===
+          if (!isTap) {
+            resetIdleTimer();
+          }
         }
       },
     },
@@ -922,8 +1008,8 @@ export default function DomeGallery({
                     }}
                   >
                     <Image
-                      height={950}
-                      width={1000}
+                      height={550}
+                      width={600}
                       src={it.src}
                       draggable={false}
                       unoptimized
