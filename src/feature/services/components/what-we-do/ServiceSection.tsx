@@ -26,16 +26,16 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
   return (
     <section id={sectionId} className=" lg:h-[550px]  overflow-hidden">
       <div
-        className={`flex flex-col-reverse md:flex-row items-center justify-center gap-12 lg:gap-28 ${
-          isImageRight ? "md:flex-row-reverse" : ""
-        }`}
+        className={`flex flex-col-reverse items-center justify-center gap-12 lg:gap-28 ${isImageRight ? "md:flex-row-reverse" : " md:flex-row"
+          }`}
       >
         <div id={imageId} className="w-full md:w-1/2 ">
           <ImageCarousel images={service.images} />
         </div>
 
-        <div id={contentId} className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 relative overflow-hidden">
           <ServiceContent
+            id={contentId}
             icon={service.icon}
             title={service.title}
             description={service.description}
@@ -49,7 +49,7 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
         imageId={imageId}
         contentId={contentId}
         isImageRight={isImageRight}
-        markers={false}
+      // markers={true}
       />
     </section>
   );

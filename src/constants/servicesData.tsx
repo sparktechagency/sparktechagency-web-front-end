@@ -23,7 +23,7 @@ export const servicesData: ServiceSection[] = [
     icon: <BiLogoVisualStudio />,
     title: "Web Development",
     description:
-      "Think of us as your development talent pool on tap! We find the perfect developers, from juniors to full-stack pros, who integrate smoothly into your teams. We support them every step of the way, so you can say goodbye to roadblocks & hello to seamless deployment.",
+      "UX consultancy guarantees that every design element enhances user engagement. Stop losing money on repeated design changes. Our skilled UX designers will direct and train your team to deliver a perfect design concept.",
     ctaText: "View more",
     layout: "image-right",
     images: [
@@ -49,15 +49,14 @@ export const servicesData: ServiceSection[] = [
   {
     id: "game-dev-1",
     icon: <BiLogoVisualStudio />,
-    title: "Game Development",
-    description:
-      "We create immersive and high-performance games, from 2D casual experiences to advanced 3D environments. Our team handles everything—from concept art to final deployment—ensuring your game stands out.",
+    title: "App Development",
+    description: "UX consultancy guarantees that every design element enhances user engagement. Stop losing money on repeated design changes. ",
     ctaText: "View more",
     layout: "image-right",
     images: [
       {
         id: "web-l-1",
-        src: "/assets/services/laptop.png",
+        src: "/assets/services/app.png",
         alt: "Web design mockup",
       },
       {
