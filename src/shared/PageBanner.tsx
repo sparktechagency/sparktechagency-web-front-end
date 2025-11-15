@@ -33,7 +33,9 @@ export default function PageBanner({
     <section
       className={`min-h-[70vh] 2xl:min-h-[70vh] px-4  ${
         isPrimary ? "bg-spark" : "bg-[#EFEDF0]"
-      } flex flex-col justify-center ${children? "lg:pt-16" :"pt-0"} items-center  text-center   lg:rounded-b-[90px]  relative overflow-hidden z-10`}
+      } flex flex-col justify-center ${
+        children ? "lg:pt-16" : "pt-0"
+      } items-center  text-center   lg:rounded-b-[90px]  relative overflow-hidden z-10`}
     >
       <div className="z-10 bg-transparent">
         <h1
@@ -57,6 +59,7 @@ export default function PageBanner({
             alt="rocket"
             width={1000}
             height={800}
+            draggable={false}
             className="absolute lg:w-[66%] 2xl:w-[52%] bottom-0 left-1/2 -translate-x-1/2 translate-y-[54%] -z-10 opacity-55"
           />
 

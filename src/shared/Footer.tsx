@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <footer className="bg-linear-to-b from-[#09320A] to-[#041504] ">
       <div className=" flex-center container w-full pb-12 lg:pb-24">
-        <Image src="/spark.png" width={1300} height={245} alt="logo" />
+        <Image src="/spark.png" width={1300} height={245} alt="logo" draggable={false} />
       </div>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="flex flex-col items-start  md:text-left ">
@@ -34,6 +34,7 @@ const Footer = () => {
             src="/fullLogo.png"
             width={125}
             height={44}
+            draggable={false}
             alt="logo"
             className=" pb-6 object-cover w-[140px]"
           />

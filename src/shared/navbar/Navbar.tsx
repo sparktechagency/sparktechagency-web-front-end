@@ -81,7 +81,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 z-50 w-full transition-all duration-500 ease-in-out 
       ${showNavbar ? "translate-y-0" : "-translate-y-28"}`}
     >
-      <div className="w-full lg:w-fit lg:mx-auto px-4 lg:px-8 py-4 transition-colors duration-300 bg-[#041904] lg:rounded-full inner-shadow-white h-16 flex items-center justify-center lg:mt-4">
+      <div className="w-full lg:w-fit lg:mx-auto px-4 lg:px-8 py-4 transition-colors duration-300 bg-[#080808] lg:rounded-full inner-shadow-white h-16 flex items-center justify-center lg:mt-4">
         <div className="flex items-center justify-between lg:justify-center w-full lg:w-auto ">
           <Link href="/" className="flex items-center lg:hidden">
             <Image

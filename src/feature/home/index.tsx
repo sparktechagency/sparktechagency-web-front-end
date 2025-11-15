@@ -1,12 +1,12 @@
-import Hero from "@/feature/home/Hero";
+import Hero from "@/feature/home/components/Hero";
 import React from "react";
-import WhatWeDoSection from "./what-we-do/WhatWeDoSection";
-import WhoWeAre from "./WhoWeAre";
-import BoostYourBusiness from "./why-us/BoostYourBusiness";
-import SuccessfulProject from "./successful-project/SuccessfulProject";
-import OurEvolution from "./our-evolution/OurEvolution";
-import SparkQuarter from "./spark-quarter/SparkQuarter";
-import { SparkiansSection } from "./sparkians-section/SparklansSection";
+import WhatWeDoSection from "./components/what-we-do/WhatWeDoSection";
+import WhoWeAre from "./components/WhoWeAre";
+import BoostYourBusiness from "./components/why-us/BoostYourBusiness";
+import SuccessfulProject from "./components/successful-project/SuccessfulProject";
+import OurEvolution from "./components/our-evolution/OurEvolution";
+import SparkQuarter from "./components/spark-quarter/SparkQuarter";
+import { SparkiansSection } from "./components/sparkians-section/SparklansSection";
 
 export default function Homepage() {
   return (

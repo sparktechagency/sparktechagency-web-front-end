@@ -21,6 +21,7 @@ const Owner: React.FC = () => {
                 alt="Dubai"
                 width={466}
                 height={664}
+                draggable={false}
                 className=" h-full lg:h-[603px] w-full object-contain"
               />
             </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import CompanyBanner from "./components/CompanyBanner";
-import OurEvolution from "../home/our-evolution/OurEvolution";
+import OurEvolution from "../home/components/our-evolution/OurEvolution";
 import Owner from "./components/Owner";
-import { SparkiansSection } from "../home/sparkians-section/SparklansSection";
+import { SparkiansSection } from "../home/components/sparkians-section/SparklansSection";
 const CompanyPage = () => {
   return (
     <section>

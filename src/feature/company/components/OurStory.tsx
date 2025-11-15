@@ -8,6 +8,7 @@ export default function OurStory() {
         <div className="flex-1 grid gap-5">
           <div className="grid grid-cols-11 gap-5 w-full">
             <Image
+              draggable={false}
               src={"/assets/company/our-story/img2.jpg"}
               width={800}
               height={350}
@@ -15,24 +16,25 @@ export default function OurStory() {
               className="col-span-6 rounded-2xl w-full h-full max-h-[250px] object-cover"
             />
             <Image
+              draggable={false}
               src={"/assets/company/our-story/img1.png"}
               width={1000}
               height={350}
-              
               alt="Meeting"
               className="col-span-5 rounded-2xl w-full h-full max-h-[250px] object-cover"
             />
           </div>
           <div className="grid grid-cols-11 gap-5 w-full">
             <Image
+              draggable={false}
               src={"/assets/company/our-story/img3.jpg"}
               width={1000}
               height={350}
-              
               alt="Meeting"
               className="col-span-5 rounded-2xl w-full h-full max-h-[250px] object-cover"
             />
             <Image
+              draggable={false}
               src={"/assets/company/our-story/img7.jpg"}
               width={400}
               height={350}
@@ -42,6 +44,7 @@ export default function OurStory() {
           </div>
           <div className="grid grid-cols-11 gap-5 w-full">
             <Image
+              draggable={false}
               src={"/assets/company/our-story/img5.png"}
               width={800}
               height={350}
@@ -49,10 +52,10 @@ export default function OurStory() {
               className="col-span-6 rounded-2xl w-full h-full max-h-[250px] object-cover"
             />
             <Image
+              draggable={false}
               src={"/assets/company/our-story/img6.jpg"}
               width={800}
               height={350}
-              
               alt="Meeting"
               className="col-span-5 rounded-2xl w-full h-full max-h-[250px] object-cover"
             />
