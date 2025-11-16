@@ -29,7 +29,6 @@ export default function ServiceSectionAnimation({
     if (!triggerEl || !imageEl || !contentEl) return;
 
     const ctx = gsap.context(() => {
-
       gsap.fromTo(
         imageEl,
         {
@@ -52,20 +51,17 @@ export default function ServiceSectionAnimation({
 
       gsap.fromTo(
         contentEl,
-        {
-          x: 0,
-          opacity: 0,
-        },
+        { x: isImageRight ? -250 : 250, opacity: 0 },
         {
           x: 0,
           opacity: 1,
           duration: 1.5,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: contentEl,
+            trigger: triggerEl,
             start: "top 80%",
             toggleActions: "play none none reverse",
-            markers: true,
+            markers,
           },
         }
       );

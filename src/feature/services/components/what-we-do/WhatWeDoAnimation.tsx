@@ -6,14 +6,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 type Props = {
   targetId: string;
   contentId: string;
-  markers?: boolean;
+  markers?: boolean; 
+  index: number
 };
 
 export default function WhatWeDoAnimation({
   targetId,
   contentId,
-  markers = false,
-}: Props) {
+  markers = false, 
+  index
+}: Props) { 
+    const isContentRight = index % 2 === 0;
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -23,21 +26,20 @@ export default function WhatWeDoAnimation({
     const contentEl = document.getElementById(contentId);
     if (!triggerEl || !contentEl) return;
 
-    const ctx = gsap.context(() => {
+    const ctx = gsap.context(() => { 
+      
       gsap.fromTo(
         contentEl,
-        { y: 250, opacity: 0, scale: 0.95 },
+        { x: isContentRight ? -250 : 250, opacity: 0 },
         {
-          y: 0,
+          x: 0,
           opacity: 1,
-          scale: 1,
           duration: 2.2,
           ease: "power3.out",
           scrollTrigger: {
             trigger: triggerEl,
             start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play none none reverse",
             markers,
           },
         }
