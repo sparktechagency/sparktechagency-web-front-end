@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { GridItem, MasonryProps } from "@/type";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,31 +71,7 @@ const preloadImages = async (urls: string[]): Promise<void> => {
   );
 };
 
-interface Item {
-  id: string;
-  img: string;
-  url?: string;
-  height: number;
-}
 
-interface GridItem extends Item {
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-}
-
-interface MasonryProps {
-  items: Item[];
-  ease?: string;
-  duration?: number;
-  stagger?: number;
-  animateFrom?: "bottom" | "top" | "left" | "right" | "center" | "random";
-  scaleOnHover?: boolean;
-  hoverScale?: number;
-  blurToFocus?: boolean;
-  colorShiftOnHover?: boolean;
-}
 
 const Masonry: React.FC<MasonryProps> = ({
   items,
@@ -115,42 +92,11 @@ const Masonry: React.FC<MasonryProps> = ({
       "(min-width:400px)",
     ],
     [5, 4, 3, 2],
-    2 // changed default to 2 columns instead of 1
+    2 
   );
 
   const [containerRef, { width }] = useMeasure<HTMLDivElement>();
   const [imagesReady, setImagesReady] = useState(false);
-
-  const getInitialPosition = (item: GridItem) => {
-    const containerRect = containerRef.current?.getBoundingClientRect();
-    if (!containerRect) return { x: item.x, y: item.y };
-
-    let direction = animateFrom;
-    if (animateFrom === "random") {
-      const dirs = ["top", "bottom", "left", "right"];
-      direction = dirs[
-        Math.floor(Math.random() * dirs.length)
-      ] as typeof animateFrom;
-    }
-
-    switch (direction) {
-      case "top":
-        return { x: item.x, y: -200 };
-      case "bottom":
-        return { x: item.x, y: window.innerHeight + 200 };
-      case "left":
-        return { x: -200, y: item.y };
-      case "right":
-        return { x: window.innerWidth + 200, y: item.y };
-      case "center":
-        return {
-          x: containerRect.width / 2 - item.w / 2,
-          y: containerRect.height / 2 - item.h / 2,
-        };
-      default:
-        return { x: item.x, y: item.y + 100 };
-    }
-  };
 
   useEffect(() => {
     preloadImages(items.map((i) => i.img)).then(() => setImagesReady(true));
@@ -174,49 +120,43 @@ const Masonry: React.FC<MasonryProps> = ({
     });
   }, [columns, items, width]);
 
-  const hasMounted = useRef(false);
-
   // Mount + resize animation
-  useLayoutEffect(() => {
-    if (!imagesReady) return;
+useLayoutEffect(() => {
+  if (!imagesReady) return;
 
-    grid.forEach((item, index) => {
-      const selector = `[data-key="${item.id}"]`;
-      const animProps = { x: item.x, y: item.y, width: item.w, height: item.h };
+  grid.forEach((item, index) => {
+    const selector = `[data-key="${item.id}"]`;
+    const animProps = { x: item.x, y: item.y, width: item.w, height: item.h };
 
-      if (!hasMounted.current) {
-        const start = getInitialPosition(item);
-        gsap.fromTo(
-          selector,
-          {
-            opacity: 0,
-            x: start.x,
-            y: start.y,
-            width: item.w,
-            height: item.h,
-            ...(blurToFocus && { filter: "blur(10px)" }),
-          },
-          {
-            opacity: 1,
-            ...animProps,
-            ...(blurToFocus && { filter: "blur(0px)" }),
-            duration: 0.8,
-            ease: "power3.out",
-            delay: index * stagger,
-          }
-        );
-      } else {
-        gsap.to(selector, {
-          ...animProps,
-          duration,
-          ease,
-          overwrite: "auto",
-        });
+    // Use ScrollTrigger to animate items on scroll
+    gsap.fromTo(
+      selector,
+      {
+        opacity: 0,
+        x: item.x,
+        y: item.y,
+        width: item.w,
+        height: item.h,
+        ...(blurToFocus && { filter: "blur(1px)" }), 
+      },
+      {
+        opacity: 1,
+        ...animProps,
+        ...(blurToFocus && { filter: "blur(0px)" }), 
+        duration: 1,
+        ease: "power3.out",
+        // delay: index * stagger,
+        scrollTrigger: {
+          trigger: selector,
+          start: "top 80%",  
+          end: "top 30%",   
+          scrub: 2,   
+          once: true,     
+        },
       }
-    });
-
-    hasMounted.current = true;
-  }, [grid, imagesReady, stagger, animateFrom, blurToFocus, duration, ease]);
+    );
+  });
+}, [grid, imagesReady, stagger, animateFrom, blurToFocus, duration, ease]);
 
   // height adjustment
   useLayoutEffect(() => {
@@ -225,30 +165,6 @@ const Masonry: React.FC<MasonryProps> = ({
     const totalHeight = lastItem.y + lastItem.h;
     containerRef.current.style.height = totalHeight + "px";
   }, [grid]);
-
-  // scroll animation
-  //   useLayoutEffect(() => {
-  //     if (!imagesReady) return;
-
-  //     grid.forEach((item) => {
-  //       gsap.fromTo(
-  //         `[data-key="${item.id}"]`,
-  //         { opacity: 0, y: 40 },
-  //         {
-  //           opacity: 1,
-  //           y: item.y,
-  //           duration: 0.6,
-  //           ease: "power2.out",
-  //           scrollTrigger: {
-  //             trigger: `[data-key="${item.id}"]`,
-  //             start: "top 90%",
-  //             toggleActions: "play none none reverse",
-  //           },
-  //           immediateRender: false,
-  //         }
-  //       );
-  //     });
-  //   }, [grid, imagesReady]);
 
   const handleMouseEnter = (id: string, element: HTMLElement) => {
     if (scaleOnHover) {

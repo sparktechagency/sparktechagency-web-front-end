@@ -3,6 +3,7 @@ import React from "react";
 import StatsSection from "./components/StatsSection";
 import PhotoAlbum from "./components/PhotoAlbum";
 import DomeGallery from "@/feature/life-at-spark/components/DomeGallery";
+import FromOurDesk from "./components/FromOurDesk";
 
 export default function LifeAtSpark() {
   return (
@@ -13,7 +14,7 @@ export default function LifeAtSpark() {
         children={<StatsSection />}
       />
       <PhotoAlbum />
-      <div className="h-96 bg-slate-200/50 rounded-lg animate-pulse my-20"></div>
+      <FromOurDesk />
       <section className="lg:min-h-screen pb-20">
         <DomeGallery />
       </section>

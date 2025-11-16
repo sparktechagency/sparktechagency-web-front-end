@@ -6,35 +6,7 @@ import DEFAULT_IMAGES, {
   ImageItem,
 } from "@/constants/life-at-spark/employeeGallery";
 import Image from "next/image";
-
-type DomeGalleryProps = {
-  images?: ImageItem[];
-  fit?: number;
-  fitBasis?: "auto" | "min" | "max" | "width" | "height";
-  minRadius?: number;
-  maxRadius?: number;
-  padFactor?: number;
-  overlayBlurColor?: string;
-  maxVerticalRotationDeg?: number;
-  dragSensitivity?: number;
-  enlargeTransitionMs?: number;
-  segments?: number;
-  dragDampening?: number;
-  openedImageWidth?: string;
-  openedImageHeight?: string;
-  imageBorderRadius?: string;
-  openedImageBorderRadius?: string;
-  grayscale?: boolean;
-};
-
-type ItemDef = {
-  src: string;
-  alt: string;
-  x: number;
-  y: number;
-  sizeX: number;
-  sizeY: number;
-};
+import { DomeGalleryProps, ItemDef } from "@/type";
 
 const DEFAULTS = {
   maxVerticalRotationDeg: 0,

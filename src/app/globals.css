@@ -3,7 +3,8 @@
 :root {
   --background: #f7f7f7;
   --foreground: #262626;
-  --primary: #9aca3c;
+  --primary: #9aca3c; 
+
 }
 
 @theme inline {
@@ -150,4 +151,8 @@ body {
 /* marquee gradient*/
 .rfm-overlay {
   --gradient-color: #f7f7f7 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary) !important;
 }
