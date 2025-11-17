@@ -4,6 +4,7 @@ import StatsSection from "./components/StatsSection";
 import PhotoAlbum from "./components/PhotoAlbum";
 import DomeGallery from "@/feature/life-at-spark/components/DomeGallery";
 import FromOurDesk from "./components/FromOurDesk";
+import VideoAccordion from "./components/VideoAccordion";
 
 export default function LifeAtSpark() {
   return (
@@ -15,9 +16,10 @@ export default function LifeAtSpark() {
       />
       <PhotoAlbum />
       <FromOurDesk />
-      <section className="lg:min-h-screen pb-20">
+      <section className="lg:min-h-screen ">
         <DomeGallery />
       </section>
+      <VideoAccordion />
     </section>
   );
 }

@@ -16,6 +16,9 @@
   .flex-center {
     @apply flex justify-center items-center;
   }
+  .section-tag{
+    @apply text-[#9ACA3C] text-2xl lg:text-[32px] font-semibold leading-[52px] mb-2;
+  }
   .section-title {
     @apply text-3xl lg:text-[40px] 2xl:text-5xl font-semibold text-foreground leading-[130%];
   }
