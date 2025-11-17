@@ -1,8 +1,13 @@
 const photoAlbums = [
   {
     id: "1",
-    img: "https://res.cloudinary.com/ds1njqypu/image/upload/v1763102918/WhatsApp_Image_2025-11-14_at_12.44.03_8a5ec43c_wyrlvc.jpg",
+    img: "https://i.ibb.co.com/YzwNx9x/545516050-122144142686886951-1279231246340808409-n.jpg",
     height: 400,
+  },
+  {
+    id: "51",
+    img: "https://i.ibb.co.com/67tNmyxh/532359867-122133876950886951-950612680579347616-n.jpg",
+    height: 440,
   },
   {
     id: "2",
@@ -60,6 +65,11 @@ const photoAlbums = [
     height: 520,
   },
   {
+    id: "78",
+    img: "https://i.ibb.co.com/gMkL0wpK/Microsoft-Teams-image-1.jpg",
+    height: 770,
+  },
+  {
     id: "13",
     img: "https://res.cloudinary.com/ds1njqypu/image/upload/v1763102921/WhatsApp_Image_2025-11-14_at_12.38.37_f85d9088_tk7os3.jpg",
     height: 270,
@@ -85,9 +95,14 @@ const photoAlbums = [
     height: 340,
   },
   {
-    id: "18",
-    img: "https://res.cloudinary.com/ds1njqypu/image/upload/v1763102921/WhatsApp_Image_2025-11-14_at_12.38.37_ae423197_nhc1rd.jpg",
-    height: 600,
+    id: "65",
+    img: "https://i.ibb.co.com/4gdBskcG/537266733-122137854668886951-272550289380864560-n.jpg",
+    height: 450,
+  },
+  {
+    id: "70",
+    img: "https://i.ibb.co.com/dJ3KHF5j/554997310-122147916110886951-7860946218894689302-n.jpg",
+    height: 480,
   },
   {
     id: "19",
