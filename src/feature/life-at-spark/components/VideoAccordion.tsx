@@ -26,7 +26,7 @@ const ITEMS: Item[] = [
     video:
       "https://res.cloudinary.com/ds1njqypu/video/upload/v1763377312/Video_Compressor___Reduce_Video_File_Size_Online_e3l3jn.mp4",
     thumbnail:
-      "https://res.cloudinary.com/ds1njqypu/image/upload/v1763102921/WhatsApp_Image_2025-11-14_at_12.38.37_03d1bccb_h4wnai.jpg",
+      "https://res.cloudinary.com/ds1njqypu/image/upload/v1763102920/WhatsApp_Image_2025-11-14_at_12.38.37_00a37fd7_fjwhti.jpg",
   },
   {
     title: "Woman’s day calibration",
@@ -34,7 +34,7 @@ const ITEMS: Item[] = [
       "A heartfelt tribute to the incredible women of our organization. We celebrate their contributions, achievements, and strength with engaging activities, appreciation moments, and a vibrant atmosphere full of joy.",
     video:
       "https://res.cloudinary.com/ds1njqypu/video/upload/v1763377312/Video_Compressor___Reduce_Video_File_Size_Online_e3l3jn.mp4",
-    thumbnail: "https://i.ibb.co.com/gMkL0wpK/Microsoft-Teams-image-1.jpg",
+    thumbnail: "https://res.cloudinary.com/ds1njqypu/image/upload/v1763102921/WhatsApp_Image_2025-11-14_at_12.38.37_03d1bccb_h4wnai.jpg",
   },
   {
     title: "Townhall Party",
