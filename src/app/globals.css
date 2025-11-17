@@ -3,8 +3,7 @@
 :root {
   --background: #f7f7f7;
   --foreground: #262626;
-  --primary: #9aca3c; 
-
+  --primary: #9aca3c;
 }
 
 @theme inline {
@@ -16,7 +15,7 @@
   .flex-center {
     @apply flex justify-center items-center;
   }
-  .section-tag{
+  .section-tag {
     @apply text-[#9ACA3C] text-2xl lg:text-[32px] font-semibold leading-[52px] mb-2;
   }
   .section-title {
@@ -27,6 +26,9 @@
   }
   .bg-spark {
     @apply bg-linear-to-b from-[#09320A] to-[#041504];
+  }
+  .form-label {
+    @apply md:text-xl  text-[#414141] font-medium tracking-[2%];
   }
 }
 

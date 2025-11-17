@@ -1,121 +1,151 @@
 "use client";
 
 import React from "react";
-import { Form, Input, Select, Button } from "antd";
-
-const { TextArea } = Input;
-const { Option } = Select;
+import { Form, Input, Select, Button, Row, Col } from "antd";
 
 export default function ContactForm() {
-    const [form] = Form.useForm();
+  const [form] = Form.useForm();
 
-    const handleSubmit = (values: any) => {
-        console.log("Form values:", values);
-    };
+  const handleSubmit = (values: any) => {
+    console.log("Form values:", values);
+  };
 
-    return (
-        <div className=" mx-auto ">
-            <Form
-                layout="vertical"
-                form={form}
-                onFinish={handleSubmit}
-                requiredMark={false}
+  return (
+    <div className="">
+      <Form
+        form={form}
+        layout="vertical"
+        onFinish={handleSubmit}
+        requiredMark={false}
+        className="inquiry-form"
+      >
+        {/* Full Name */}
+        <Form.Item
+          label={<span className="form-label">Full Name</span>}
+          name="fullName"
+          rules={[{ required: true, message: "Please enter your full name" }]}
+        >
+          <Input
+            placeholder="Enter your full name"
+            className="form-input h-10 lg:h-[52px]"
+          />
+        </Form.Item>
+
+        {/* Email and Contact Number Row */}
+        <Row gutter={[32, 0]}>
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label={<span className="form-label">Your Email</span>}
+              name="email"
+              rules={[
+                { required: true, message: "Please enter your email" },
+                { type: "email", message: "Invalid email format" },
+              ]}
             >
-                {/* Full Name */}
-                <Form.Item
-                    label={<span className="font-medium text-[#414141] text-lg">Full Name</span>}
-                    name="fullName"
-                    rules={[{ required: true, message: "Please enter your full name" }]}
-                >
-                    <Input
-                        placeholder="Enter your full name"
-                        className="h-[52px] rounded-xl border-[#DADADA]"
-                    />
-                </Form.Item>
+              <Input
+                placeholder="Enter your email"
+                className="form-input h-10 lg:h-[52px]"
+              />
+            </Form.Item>
+          </Col>
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label={<span className="form-label">Contact No.</span>}
+              name="phone"
+              rules={[
+                { required: true, message: "Please enter your phone number" },
+              ]}
+            >
+              <div className="flex gap-2">
+                <Select
+                  defaultValue="+880"
+                  className="country-code-select h-10! lg:h-[52px]! "
+                  style={{ width: 80 }}
+                  options={[
+                    { label: "+880", value: "+880" },
+                    { label: "+1", value: "+1" },
+                    { label: "+44", value: "+44" },
+                  ]}
+                />
+                <Input
+                  placeholder="1953512253"
+                  type="tel"
+                  inputMode="numeric"
+                  pattern="[1-9]*"
+                  maxLength={10}
+                  className="form-input h-10! lg:h-[52px]!"
+                />
+              </div>
+            </Form.Item>
+          </Col>
+        </Row>
 
-                {/* Email and Contact */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Form.Item
-                        label={<span className="font-medium text-[#414141] text-lg">Your Email</span>}
-                        name="email"
-                        rules={[{ required: true, type: "email", message: "Enter a valid email" }]}
-                    >
-                        <Input
-                            placeholder="Enter your email"
-                            className="h-[52px] rounded-xl border-[#DADADA]"
-                        />
-                    </Form.Item>
+        {/* Service Required and Project Budget Row */}
+        <Row gutter={[32, 0]}>
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label={<span className="form-label">Service required</span>}
+              name="service"
+              rules={[{ required: true, message: "Please select a service" }]}
+            >
+              <Select
+                placeholder="Select you service"
+                className="h-10! lg:h-[52px]! flex! text-start! "
+                options={[
+                  { label: "Web Development", value: "web" },
+                  { label: "Mobile App", value: "mobile" },
+                  { label: "UI/UX Design", value: "design" },
+                  { label: "Consulting", value: "consulting" },
+                ]}
+              />
+            </Form.Item>
+          </Col>
+          <Col xs={24} sm={12}>
+            <Form.Item
+              label={<span className="form-label">Project budget</span>}
+              name="budget"
+              rules={[
+                { required: true, message: "Please select a budget range" },
+              ]}
+              className="text-start!"
+            >
+              <Select
+                placeholder="Select your range "
+                className="h-10! lg:h-[52px]! text-start!"
+                options={[
+                  { label: "$1,000 - $5,000", value: "1-5k" },
+                  { label: "$5,000 - $10,000", value: "5-10k" },
+                  { label: "$10,000 - $25,000", value: "10-25k" },
+                  { label: "$25,000+", value: "25k+" },
+                ]}
+              />
+            </Form.Item>
+          </Col>
+        </Row>
 
-                    <Form.Item
-                        label={<span className="font-medium text-[#414141] text-lg">Contact No.</span>}
-                        name="contact"
-                        rules={[{ required: true, message: "Please enter your contact number" }]}
-                    >
-                        <Input
-                            type="number"
-                            placeholder="Enter your Contact Number"
-                            className="h-[52px] rounded-xl border-[#DADADA]"
-                        />
-                    </Form.Item>
-                </div>
+        {/* Project Details */}
+        <Form.Item
+          label={<span className="form-label">Project Details</span>}
+          name="details"
+          rules={[{ required: true, message: "Please enter project details" }]}
+        >
+          <Input.TextArea
+            placeholder="Enter your details"
+            rows={8}
+            className="form-input"
+          />
+        </Form.Item>
 
-                {/* Service and Budget */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Form.Item
-                        label={<span className="font-medium text-[#414141] text-lg">Service required</span>}
-                        name="service"
-                        rules={[{ required: true, message: "Please select a service" }]}
-                    >
-                        <Select
-                            placeholder="Select your service"
-                            className=" rounded-xl"
-                            style={{ height:52 }}
-                        > 
-                            <Option value="design">UI/UX Design</Option>
-                            <Option value="development">Web Development</Option>
-                            <Option value="marketing">Digital Marketing</Option>
-                        </Select>
-                    </Form.Item>
-
-                    <Form.Item
-                        label={<span className="font-medium text-[#414141] text-lg">Project budget</span>}
-                        name="budget"
-                        rules={[{ required: true, message: "Please select a budget range" }]}
-                    >
-                        <Select
-                            placeholder="Select your range" 
-                            style={{ height:52 }}
-                        >
-                            <Option value="low">$1000 - $3000</Option>
-                            <Option value="medium">$3000 - $7000</Option>
-                            <Option value="high">$7000 - $15000</Option>
-                        </Select>
-                    </Form.Item>
-                </div>
-
-                {/* Project Details */}
-                <Form.Item
-                    label={<span className="font-medium text-[#414141] text-lg">Project Details</span>}
-                    name="details"
-                    rules={[{ required: true, message: "Please enter your project details" }]}
-                >
-                    <TextArea
-                        rows={7}
-                        placeholder="Enter your details"
-                        className="rounded-xl border-[#DADADA]"
-                    />
-                </Form.Item>
-
-                {/* Submit Button */}
-                <Form.Item className="mb-0">
-                    <button
-                        type="submit"
-                        className="bg-linear-to-b from-[#09320A] to-[#041504] text-white rounded-full h-16 w-full text-[16px] hover:bg-[#006B24] transition-all duration-300 text-lg font-semibold"
-                    >
-                        Submit Inquiry
-                    </button>
-                </Form.Item>
-            </Form>
-        </div>
-    );
+        {/* Submit Button */}
+        <Form.Item className="mb-0">
+          <button
+            type="submit"
+            className="bg-linear-to-b from-[#09320A] to-[#041504] text-white rounded-full h-16 w-full text-[16px] hover:bg-[#006B24] transition-all duration-300 text-lg font-semibold"
+          >
+            Submit Inquiry
+          </button>
+        </Form.Item>
+      </Form>
+    </div>
+  );
 }
