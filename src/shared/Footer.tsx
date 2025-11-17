@@ -92,7 +92,7 @@ const Footer = () => {
         <div className=" flex items-center gap-2.5   text-white">
           {/* Download Button */}
           <a
-            href="https://drive.google.com/file/d/1rg_CRbQDkNwv0j2QWlA16vD2tMaxJNYu/view?usp=sharing"
+            href="/pdf/company-desk.pdf"
             download
             className="bg-[#9ACA3C] w-12 h-12 rounded-full flex items-center justify-center transition-transform hover:scale-105"
           >
@@ -104,7 +104,7 @@ const Footer = () => {
             <p className="text-[16px] lg:text-[22px] font-light text-[#F1F1F1]">
               Company Desk
             </p>
-            <p className="text-sm text-[#7d7d82] font-medium">PDF, 17 MB</p>
+            <p className="text-sm text-[#7d7d82] font-medium">PDF, 7.3 MB</p>
           </div>
         </div>
         <Upbutton />

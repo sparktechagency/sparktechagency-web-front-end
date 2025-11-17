@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { Button } from "antd";
 import { ArrowRight } from "lucide-react";
 import { gsap } from "gsap";
+import { useRouter } from "next/navigation";
 
 interface JobCardProps {
   job: {
@@ -17,7 +18,8 @@ interface JobCardProps {
 }
 
 export default function JobCard({ job }: JobCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null); 
+  const router = useRouter();
 
   useEffect(() => {
     // Entry animation
@@ -83,7 +85,8 @@ export default function JobCard({ job }: JobCardProps) {
         {/* Apply Button */}
         <Button
           type="primary"
-          className="bg-black! text-white! shadow-none! h-10! lg:h-12! rounded-full! w-[170px]! text-[16px]! flex items-center justify-center gap-1 transition-all duration-300 "
+          className="bg-black! text-white! shadow-none! h-10! lg:h-12! rounded-full! w-[170px]! text-[16px]! flex items-center justify-center gap-1 transition-all duration-300 " 
+          onClick={() => router.push(`/career/${job.title}`)}
         >
           Job Details
           <ArrowRight

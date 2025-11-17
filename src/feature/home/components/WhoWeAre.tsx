@@ -1,22 +1,9 @@
-"use client";
-import React, { useRef, useState } from "react";
+
+import React from "react";
 import { GoArrowRight } from "react-icons/go";
-import { Play, Pause } from "lucide-react";
 
 const WhoWeAre = () => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
 
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
   return (
     <div className=" min-h-screen w-full bg-linear-to-b from-[#041504] to-[#09320A]">
       <div className="container pt-20 pb-16 lg:pt-[140px] lg:pb-[73px]">
@@ -51,7 +38,6 @@ const WhoWeAre = () => {
               {/* Video background */}
               <div className="absolute inset-0">
                 <video
-                  ref={videoRef}
                   className="w-full h-full lg:h-[500px] object-cover"
                   autoPlay
                   loop
@@ -60,7 +46,7 @@ const WhoWeAre = () => {
                   disablePictureInPicture
                 >
                   <source
-                    src="https://res.cloudinary.com/dd0giqouc/video/upload/v1756794983/Home_Page_Video_cd66tv.mp4"
+                    src="https://res.cloudinary.com/dreiyzj42/video/upload/v1763358126/sta_zgadz0.mp4"
                     type="video/mp4"
                   />
                   Your browser does not support the video tag.

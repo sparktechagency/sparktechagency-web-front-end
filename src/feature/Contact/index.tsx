@@ -26,7 +26,7 @@ const ContactPage = () => {
               </p>
               <div className="h-[290px] w-full pt-10">
                 <div className="relative   rounded-2xl shadow-lg h-[290px]">
-                  <div className="relative rounded-2xl overflow-hidden bg-black aspect-video h-[290px] backdrop-blur-md w-full border border-transparent p-1.5">
+                  <div className="relative rounded-2xl overflow-hidden bg-black aspect-video h-[290px] backdrop-blur-md w-full border border-primary  p-1.5">
                     {/* Video background */}
                     <div className="absolute inset-0">
                       <video
@@ -38,7 +38,7 @@ const ContactPage = () => {
                         disablePictureInPicture
                       >
                         <source
-                          src="https://res.cloudinary.com/dd0giqouc/video/upload/v1756794983/Home_Page_Video_cd66tv.mp4"
+                          src="https://res.cloudinary.com/dreiyzj42/video/upload/v1763358126/sta_zgadz0.mp4"
                           type="video/mp4"
                         />
                         Your browser does not support the video tag.
