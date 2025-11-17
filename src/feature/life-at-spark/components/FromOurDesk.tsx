@@ -93,9 +93,11 @@ const FromOurDesk = () => {
                         alt={item.name}
                         width={450}
                         height={470}
-                        className="w-[200px] lg:w-full lg:h-full object-cover lg:object-contain rounded-br-[60px]"
+                        className="w-[200px] lg:w-full lg:h-full object-cover lg:object-contain lg:rounded-br-[60px]"
                         priority
                       />
+                      {/* green gradient overlay */}
+                      <div className="hidden lg:block absolute bottom-0 right-0 w-full  h-32 pointer-events-none z-40 bg-linear-to-t from-[#041504] to-transparent rounded-br-[60px] " />
                     </div>
                   </div>
                 </div>
