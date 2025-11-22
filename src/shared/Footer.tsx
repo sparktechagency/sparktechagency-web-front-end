@@ -94,7 +94,7 @@ const Footer = () => {
           <a
             href="/pdf/company-desk.pdf"
             download
-            className="bg-[#9ACA3C] w-12 h-12 rounded-full flex items-center justify-center transition-transform hover:scale-105"
+            className="bg-[#9ACA3C] w-12 h-12 rounded-full flex items-center justify-center transition-transform hover:scale-105  "
           >
             <Download className="text-black w-5 h-5" />
           </a>
@@ -102,7 +102,7 @@ const Footer = () => {
           {/* Text Section */}
           <div className="flex flex-col  gap-y-1 leading-tight">
             <p className="text-[16px] lg:text-[22px] font-light text-[#F1F1F1]">
-              Company Desk
+              Company Deck
             </p>
             <p className="text-sm text-[#7d7d82] font-medium">PDF, 7.3 MB</p>
           </div>
